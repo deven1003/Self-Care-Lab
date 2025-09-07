@@ -1,3 +1,34 @@
+.btn-get-started {
+  font-weight: bold !important;
+}
+.cta-btn {
+  font-weight: bold !important;
+}
+/* Force bold for key sections */
+.text-center h3,
+.text-center p {
+  font-weight: bold;
+}
+.feature-content h4 {
+  font-weight: bold;
+}
+.feature-content p {
+  font-weight: bold !important;
+}
+/* Force bold for navmenu links */
+#navmenu a,
+#navmenu .dropdown > a,
+#navmenu .dropdown ul li a {
+  font-weight: bold;
+}
+/* Force bold for feature cards and topbar info */
+.feature-content h4,
+.feature-content p {
+  font-weight: bold;
+}
+.topbar .align-items-center {
+  font-weight: bold;
+}
 /**
 * Template Name: Medicio
 * Template URL: https://bootstrapmade.com/medicio-free-bootstrap-theme/
@@ -11,10 +42,23 @@
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /* Fonts */
+@font-face {
+  font-family: 'SoDo Sans Thin';
+  src: url('../fonts/SoDoSans-Thin.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+  --default-font: 'SoDo Sans Thin', Arial, sans-serif;
+  --heading-font: 'SoDo Sans Thin', Arial, sans-serif;
+  --nav-font: 'SoDo Sans Thin', Arial, sans-serif;
+}
+/* Simulate bold for headings, nav, paragraphs, and lists */
+h1, h2, h3, h4, h5, h6, .navbar, .nav, .nav-link, .menu, .site-title, .footer-links h4,
+p, li {
+  font-family: var(--heading-font);
+  font-weight: bold;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -1662,7 +1706,7 @@ section,
 .pricing .pricing-item h4 span {
   color: color-mix(in srgb, var(--default-color), transparent 40%);
   font-size: 16px;
-  font-weight: 300;
+  font-weight: bold !important;
 }
 
 .pricing .pricing-item ul {
