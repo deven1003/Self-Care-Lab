@@ -19,33 +19,32 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #F9F8F6; /* Background color for the entire website, including individual sections - Soft Ivory (Cream) */
-  --default-color: #2E2E2E; /* Default color used for the majority of the text content across the entire website - Graphite Gray */
-  --heading-color: #2E2E2E; /* Color for headings, subheadings and title throughout the website - Graphite Gray */
-  --accent-color: #A594F9; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out - Muted Lavender/Plum */
-  --surface-color: #FFFFFF; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. - White */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
-  
-  /* Additional Psychology-themed colors */
-  --cta-primary-color: #88B89F; /* Sage Green for primary CTA buttons */
-  --cta-secondary-color: #FF8C8C; /* Warm Coral for secondary CTA buttons */
-  --border-color: #E2E2E2; /* Mist Gray for light borders */
+  --background-color: #FDF6ED; /* Cream - calm, grounding, safe */
+  --default-color: #3D2321; /* Maroon - emotional depth, transformation */
+  --heading-color: #3D2321; /* Maroon for headings */
+  --accent-color: #FFD34E; /* Mustard Gold - optimism, wisdom, confidence */
+  --surface-color: #FFFFFF; /* White for cards/surfaces */
+  --contrast-color: #3D2321; /* Maroon for contrast text */
+  /* Updated CTA and border colors */
+  --cta-primary-color: #FFD34E; /* Mustard Gold for primary CTA */
+  --cta-secondary-color: #B03A2E; /* Deep Maroon for secondary CTA */
+  --border-color: #F5E6D6; /* Light Cream for borders */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #2E2E2E;  /* The default color of the main navmenu links - Graphite Gray */
-  --nav-hover-color: #A594F9; /* Applied to main navmenu links when they are hovered over or active - Muted Lavender/Plum */
-  --nav-mobile-background-color: #F9F8F6; /* Used as the background color for mobile navigation menu - Soft Ivory */
-  --nav-dropdown-background-color: #FFFFFF; /* Used as the background color for dropdown items that appear when hovering over primary navigation items - White */
-  --nav-dropdown-color: #2E2E2E; /* Used for navigation links of the dropdown items in the navigation menu - Graphite Gray */
-  --nav-dropdown-hover-color: #A594F9; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over - Muted Lavender/Plum */
+  --nav-color: #3D2321;  /* Maroon for nav links */
+  --nav-hover-color: #FFD34E; /* Mustard Gold on hover */
+  --nav-mobile-background-color: #FDF6ED; /* Cream for mobile nav */
+  --nav-dropdown-background-color: #FFFFFF; /* White for dropdown */
+  --nav-dropdown-color: #3D2321; /* Maroon for dropdown links */
+  --nav-dropdown-hover-color: #FFD34E; /* Mustard Gold on hover */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #F9F8F6;
+  --background-color: #FDF6ED;
   --surface-color: #ffffff;
 }
 
@@ -57,11 +56,12 @@
   --contrast-color: #ffffff;
 }
 
+
 .accent-background {
-  --background-color: #A594F9;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
-  --surface-color: #B8A8FA;
+  --background-color: var(--accent-color); /* Mustard Gold background */
+  --default-color: var(--default-color); /* Maroon text */
+  --heading-color: var(--heading-color); /* Maroon headings */
+  --surface-color: var(--surface-color); /* White for cards/surfaces */
 }
 
 /* Smooth scroll */

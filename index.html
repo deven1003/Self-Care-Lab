@@ -42,7 +42,7 @@
       border-radius: 50%;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #FFD34E 0%, #3D2321 100%); /* Mustard Gold to Maroon */
       padding: 8px;
     }
 
@@ -98,7 +98,8 @@
     }
 
     .social-icons a:hover {
-      background: #007bff;
+  background: #FFD34E; /* Mustard Gold */
+  color: #3D2321;
       color: white;
       transform: scale(1.1);
     }
@@ -217,7 +218,7 @@
       left: 0;
       width: 100%;
       height: 4px;
-      background: linear-gradient(135deg, #A594F9 0%, #8B7ED8 100%);
+  background: linear-gradient(135deg, #FFD34E 0%, #3D2321 100%); /* Mustard Gold to Maroon */
       transform: scaleX(0);
       transition: transform 0.4s ease;
     }
@@ -229,26 +230,26 @@
     .feature-card:hover {
       transform: translateY(-8px);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-      border-color: #A594F9;
+  border-color: #FFD34E; /* Mustard Gold */
     }
 
     .feature-icon {
       flex-shrink: 0;
       width: 80px;
       height: 80px;
-      background: linear-gradient(135deg, #A594F9 0%, #8B7ED8 100%);
+  background: linear-gradient(135deg, #FFD34E 0%, #3D2321 100%); /* Mustard Gold to Maroon */
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 0;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(165, 148, 249, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 211, 78, 0.3); /* Mustard Gold shadow */
     }
 
     .feature-card:hover .feature-icon {
       transform: scale(1.1);
-      box-shadow: 0 6px 20px rgba(165, 148, 249, 0.4);
+  box-shadow: 0 6px 20px rgba(255, 211, 78, 0.4); /* Mustard Gold shadow */
     }
 
     .feature-icon i {
@@ -270,7 +271,7 @@
     }
 
     .feature-card:hover .feature-content h4 {
-      color: #A594F9;
+  color: #FFD34E; /* Mustard Gold */
     }
 
     .feature-content p {
@@ -432,7 +433,8 @@
           <div class="container">
             <h2>“Personalized Self-Care, Rooted in Psychology”</h2>
             <p>Clarity, confidence, and emotional insight through cognitive behavioral therapy and modern counseling.</p>
-            <a href="#about" class="btn-get-started">Read More</a>
+            <!-- <a href="#about" class="btn-get-started">Read More</a> -->
+            <a href="#welcome" class="btn-get-started">Read More</a>
           </div>
         </div><!-- End Carousel Item -->
 
@@ -441,12 +443,11 @@
           <div class="container">
 <h3>Why This? Why Now?</h3>
 <p>
-  <strong>Position Naresh’s offer in the current world of burnout, identity crisis, and wellness overload.</strong>
+  <strong>Position Naresh’s offer in the current world of burnout, identity crisis, and wellness overload.</strong><br>
+  <span style="display:block; margin-top:8px; font-style:italic; color:var(--accent-color);">
+    “We’re overwhelmed with content but underwhelmed by real emotional tools.” Self-care isn’t face masks — it’s facing yourself.
+  </span>
 </p>
-<ul>
-  <li><em>“We’re overwhelmed with content but underwhelmed by real emotional tools.”</em></li>
-  <li><em>“Self-care isn’t face masks — it’s facing yourself.”</em></li>
-</ul>
           </div>
         </div><!-- End Carousel Item -->
 
@@ -480,35 +481,56 @@
 
         <div class="row gy-4">
 
+
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item position-relative">
-              <div class="icon"><i class="fas fa-heartbeat icon"></i></div>
-              <h4><a href="" class="stretched-link">Cognitive Behavioral Therapy</a></h4>
-              <p>Evidence-based therapeutic techniques to help you identify and change negative thought patterns and behaviors</p>
+              <div style="display: flex; align-items: flex-start; gap: 30px; margin-bottom: 10px;">
+                <span class="icon" style="display: flex; align-items: center;"><i class="fas fa-map-signs icon"></i></span>
+                <h4 style="margin: 0; display: flex; align-items: center; line-height: 1.2; position: relative; top: 2px;"><a href="#" class="stretched-link">Guidance</a></h4>
+              </div>
+              <p><strong>Focus:</strong> Providing information, suggestions, or direction to help someone make decisions (e.g., career, education, lifestyle).<br>
+              <strong>Nature:</strong> Preventive and developmental.<br>
+              <strong>Relationship:</strong> Not very deep; often short-term.<br>
+              <strong>Example:</strong> A student asking for career options after graduation.</p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item position-relative">
-              <div class="icon"><i class="fas fa-pills icon"></i></div>
-              <h4><a href="" class="stretched-link">Mindfulness & Meditation</a></h4>
-              <p>Learn practical mindfulness techniques to reduce stress, anxiety, and improve emotional regulation</p>
+          <div style="display: flex; align-items: flex-start; gap: 30px; margin-bottom: 10px;">
+                <span class="icon" style="display: flex; align-items: center;"><i class="fas fa-comments icon"></i></span>
+                <h4 style="margin: 0; display: flex; align-items: center; line-height: 1.2; position: relative; top: 2px;"><a href="#" class="stretched-link">Counselling</a></h4>
+              </div>
+              <p><strong>Focus:</strong> Helping individuals explore and resolve emotional, social, or personal issues through dialogue.<br>
+              <strong>Nature:</strong> Supportive and collaborative; insight-oriented.<br>
+              <strong>Relationship:</strong> Requires trust and rapport; short- to mid-term.<br>
+              <strong>Example:</strong> Helping someone manage stress, relationship issues, or low self-esteem.</p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
             <div class="service-item position-relative">
-              <div class="icon"><i class="fas fa-thermometer icon"></i></div>
-              <h4><a href="" class="stretched-link">Stress Management</a></h4>
-              <p>Develop personalized strategies to manage stress, build resilience, and maintain emotional balance</p>
+           <div style="display: flex; align-items: flex-start; gap: 30px; margin-bottom: 10px;">
+                <span class="icon" style="display: flex; align-items: center;"><i class="fas fa-user-md icon"></i></span>
+                <h4 style="margin: 0; display: flex; align-items: center; line-height: 1.2; position: relative; top: 2px;"><a href="#" class="stretched-link">Therapy</a></h4>
+              </div>
+              <p><strong>Focus:</strong> Treating psychological disorders, trauma, or deeply rooted emotional struggles using specialized therapeutic approaches.<br>
+              <strong>Nature:</strong> Clinical, diagnostic, often long-term.<br>
+              <strong>Relationship:</strong> Deep, structured, and guided by trained mental health professionals (psychologists, psychiatrists, or psychotherapists).<br>
+              <strong>Example:</strong> Cognitive Behavioral Therapy for anxiety or depression.</p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
             <div class="service-item position-relative">
-              <div class="icon"><i class="fas fa-dna icon"></i></div>
-              <h4><a href="" class="stretched-link">Sleep & Recovery</a></h4>
-              <p>Science-based approaches to improve sleep quality and develop healthy recovery practices</p>
+               <div style="display: flex; align-items: flex-start; gap: 30px; margin-bottom: 10px;">
+                <span class="icon" style="display: flex; align-items: center;"><i class="fas fa-chalkboard-teacher icon"></i></span>
+                <h4 style="margin: 0; display: flex; align-items: center; line-height: 1.2; position: relative; top: 2px;"><a href="#" class="stretched-link">Training</a></h4>
+              </div>
+              <p><strong>Focus:</strong> Teaching specific skills or competencies through structured programs.<br>
+              <strong>Nature:</strong> Practical, goal-oriented, and usually group-based.<br>
+              <strong>Relationship:</strong> Instructor–participant dynamic.<br>
+              <strong>Example:</strong> Assertiveness training, emotional intelligence workshops, communication skills sessions.</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -527,121 +549,59 @@
           <div class="col-lg-10">
             
             <!-- Welcome Header -->
-            <div class="text-center mb-5" data-aos="fade-up">
-              <h2 style="color: var(--heading-color); margin-bottom: 25px; font-size: 2.5rem; font-weight: 700;">
+            <div class="text-center mb-4" data-aos="fade-up">
+              <h2 style="color: var(--heading-color); margin-bottom: 20px; font-size: 2.3rem; font-weight: 700;">
                 Welcome to the Self-Care Lab
               </h2>
-              <p style="color: var(--default-color); font-size: 1.2rem; line-height: 1.6; margin-bottom: 0;">
-                Do you struggle with staying consistent in journaling, healing, or self-growth? The Self-Care Lab is a guided reflection space that helps you go beyond surface-level motivation and build grounded personal systems.
+              <p style="color: var(--default-color); font-size: 1.1rem; line-height: 1.6; margin-bottom: 0;">
+                At The Self Care Lab, we believe self-care isn’t one-size-fits-all. Our approach blends modern psychology with practical tools to help you discover what truly works for you. Whether you're feeling stuck, burnt out, or simply seeking clarity, we guide you toward personalized strategies that align with your values, personality, and emotional needs. This is not just about spa days or quick fixes—it’s about understanding yourself deeply and creating a sustainable self-care routine grounded in psychological insight.
               </p>
+
             </div>
 
-            <!-- Key Features -->
-            <div class="row text-center mb-5" data-aos="fade-up" data-aos-delay="100">
-              <div class="col-md-4 mb-4">
-                <div style="padding: 30px 20px; height: 100%;">
-                  <div style="font-size: 3rem; margin-bottom: 20px;">🧠</div>
-                  <h4 style="color: var(--heading-color); font-weight: 600; margin-bottom: 15px;">Data-backed</h4>
-                  <p style="color: var(--default-color); font-size: 1rem; line-height: 1.5;">Evidence-based insights and tracking for meaningful progress</p>
+            <!-- Key Features
+            <div class="row text-center mb-3" data-aos="fade-up" data-aos-delay="100">
+              <div class="col-md-4 mb-2">
+                <div style="padding: 10px 5px;">
+                  <svg style="width: 20px; height: 20px; margin-right: 8px; color: var(--accent-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <span style="color: var(--heading-color); font-weight: 600; font-size: 0.95rem;">Evidence-based</span>
                 </div>
               </div>
-              <div class="col-md-4 mb-4">
-                <div style="padding: 30px 20px; height: 100%;">
-                  <div style="font-size: 3rem; margin-bottom: 20px;">📓</div>
-                  <h4 style="color: var(--heading-color); font-weight: 600; margin-bottom: 15px;">Action-focused</h4>
-                  <p style="color: var(--default-color); font-size: 1rem; line-height: 1.5;">Practical tools and strategies you can implement immediately</p>
+              <div class="col-md-4 mb-2">
+                <div style="padding: 10px 5px;">
+                  <svg style="width: 20px; height: 20px; margin-right: 8px; color: var(--accent-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                  </svg>
+                  <span style="color: var(--heading-color); font-weight: 600; font-size: 0.95rem;">Action-focused</span>
                 </div>
               </div>
-              <div class="col-md-4 mb-4">
-                <div style="padding: 30px 20px; height: 100%;">
-                  <div style="font-size: 3rem; margin-bottom: 20px;">💬</div>
-                  <h4 style="color: var(--heading-color); font-weight: 600; margin-bottom: 15px;">Human-guided</h4>
-                  <p style="color: var(--default-color); font-size: 1rem; line-height: 1.5;">Personalized support with empathy and professional expertise</p>
+              <div class="col-md-4 mb-2">
+                <div style="padding: 10px 5px;">
+                  <svg style="width: 20px; height: 20px; margin-right: 8px; color: var(--accent-color);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                  </svg>
+                  <span style="color: var(--heading-color); font-weight: 600; font-size: 0.95rem;">Personalized</span>
                 </div>
               </div>
-            </div>
+            </div> -->
 
-            <!-- Psychology Foundation -->
-            <div class="mb-5" data-aos="fade-up" data-aos-delay="200">
-              <div style="background: linear-gradient(135deg, rgba(165, 148, 249, 0.1) 0%, rgba(139, 126, 216, 0.05) 100%); padding: 30px; border-radius: 15px; border-left: 4px solid var(--accent-color);">
-                <p style="color: var(--default-color); font-size: 1rem; line-height: 1.7; margin-bottom: 0; font-style: italic;">
-                  <strong>Carl Rogers' person-centered theory</strong> emphasizes that every individual has the inner potential for growth, healing, and self-understanding when given the right environment. According to Rogers, real change happens not through advice or judgment, but through a relationship built on empathy, genuineness, and unconditional positive regard. In this approach, the client is seen as the expert of their own experience, and the role of the counselor is to create a safe, non-directive space where self-awareness can naturally emerge. This humanistic foundation deeply influences how The Self-Care Lab holds space for reflection and emotional clarity.
+            <!-- What Makes Us Different
+            <div class="row mb-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="col-lg-6 text-center mb-4">
+                <h4 style="color: var(--heading-color); font-weight: 600; margin-bottom: 18px;">Why <strong>Choose</strong> Us</h4>
+                <p style="color: var(--default-color); font-size: 1.05rem; font-weight: 500; margin-bottom: 0;">
+                  <strong>Personalized guidance, a safe space for reflection, and practical insights to help you grow.</strong>
                 </p>
               </div>
-            </div>
-
-            <!-- Target Audience -->
-            <div class="text-center mb-5" data-aos="fade-up" data-aos-delay="300">
-              <p style="color: var(--default-color); font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px;">
-                Whether you're navigating burnout, overthinking, emotional stuckness, or want to go deeper in your inner work — these sessions are designed to help you reflect, track, and act.
-              </p>
-            </div>
-
-            <!-- What Makes Us Different -->
-            <div class="row mb-5" data-aos="fade-up" data-aos-delay="400">
-              <div class="col-lg-6">
-                <h4 style="color: var(--heading-color); font-weight: 600; margin-bottom: 25px; font-size: 1.3rem;">
-                  What makes this different?
-                </h4>
-                <ul style="list-style: none; padding-left: 0;">
-                  <li style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-                    <span style="color: var(--accent-color); font-size: 1.2rem; margin-right: 10px; margin-top: 2px;">✳️</span>
-                    <span style="color: var(--default-color); font-size: 1rem; line-height: 1.5;">No cookie-cutter advice</span>
-                  </li>
-                  <li style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-                    <span style="color: var(--accent-color); font-size: 1.2rem; margin-right: 10px; margin-top: 2px;">🪞</span>
-                    <span style="color: var(--default-color); font-size: 1rem; line-height: 1.5;">You'll be heard, not hurried</span>
-                  </li>
-                  <li style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-                    <span style="color: var(--accent-color); font-size: 1.2rem; margin-right: 10px; margin-top: 2px;">🎯</span>
-                    <span style="color: var(--default-color); font-size: 1rem; line-height: 1.5;">You'll leave every session with 1–3 tailored insights or actions</span>
-                  </li>
-                  <li style="display: flex; align-items: flex-start; margin-bottom: 15px;">
-                    <span style="color: var(--accent-color); font-size: 1.2rem; margin-right: 10px; margin-top: 2px;">🔁</span>
-                    <span style="color: var(--default-color); font-size: 1rem; line-height: 1.5;">Optional follow-up nudges to help you stay on track</span>
-                  </li>
-                </ul>
+              <div class="col-lg-6 text-center mb-4">
+                <h4 style="color: var(--heading-color); font-weight: 600; margin-bottom: 18px;"><strong>Perfect</strong> For You If</h4>
+                <p style="color: var(--default-color); font-size: 1.05rem; font-weight: 500; margin-bottom: 0;">
+                  <strong>You feel stuck, want clarity on your goals, or are ready for honest self-reflection.</strong>
+                </p>
               </div>
-              <div class="col-lg-6">
-                <h4 style="color: var(--heading-color); font-weight: 600; margin-bottom: 25px; font-size: 1.3rem;">
-                  This guided reflection space is designed for:
-                </h4>
-                <ul style="list-style: none; padding-left: 0;">
-                  <li style="display: flex; align-items: flex-start; margin-bottom: 12px;">
-                    <span style="color: var(--accent-color); font-size: 1rem; margin-right: 8px; margin-top: 3px;">•</span>
-                    <span style="color: var(--default-color); font-size: 0.95rem; line-height: 1.5;">Overcoming emotional burnout, overthinking, and stress</span>
-                  </li>
-                  <li style="display: flex; align-items: flex-start; margin-bottom: 12px;">
-                    <span style="color: var(--accent-color); font-size: 1rem; margin-right: 8px; margin-top: 3px;">•</span>
-                    <span style="color: var(--default-color); font-size: 0.95rem; line-height: 1.5;">Gaining clarity around self-identity and personal values</span>
-                  </li>
-                  <li style="display: flex; align-items: flex-start; margin-bottom: 12px;">
-                    <span style="color: var(--accent-color); font-size: 1rem; margin-right: 8px; margin-top: 3px;">•</span>
-                    <span style="color: var(--default-color); font-size: 0.95rem; line-height: 1.5;">Improving self-awareness, self-concept, self-efficacy, and self-esteem</span>
-                  </li>
-                  <li style="display: flex; align-items: flex-start; margin-bottom: 12px;">
-                    <span style="color: var(--accent-color); font-size: 1rem; margin-right: 8px; margin-top: 3px;">•</span>
-                    <span style="color: var(--default-color); font-size: 0.95rem; line-height: 1.5;">Working through relationship challenges and emotional triggers</span>
-                  </li>
-                  <li style="display: flex; align-items: flex-start; margin-bottom: 12px;">
-                    <span style="color: var(--accent-color); font-size: 1rem; margin-right: 8px; margin-top: 3px;">•</span>
-                    <span style="color: var(--default-color); font-size: 0.95rem; line-height: 1.5;">Managing negative thought patterns using CBT-based reflection</span>
-                  </li>
-                  <li style="display: flex; align-items: flex-start; margin-bottom: 12px;">
-                    <span style="color: var(--accent-color); font-size: 1rem; margin-right: 8px; margin-top: 3px;">•</span>
-                    <span style="color: var(--default-color); font-size: 0.95rem; line-height: 1.5;">Setting realistic, aligned personal or academic goals</span>
-                  </li>
-                  <li style="display: flex; align-items: flex-start; margin-bottom: 12px;">
-                    <span style="color: var(--accent-color); font-size: 1rem; margin-right: 8px; margin-top: 3px;">•</span>
-                    <span style="color: var(--default-color); font-size: 0.95rem; line-height: 1.5;">Understanding personality patterns and decision-making behavior</span>
-                  </li>
-                  <li style="display: flex; align-items: flex-start; margin-bottom: 12px;">
-                    <span style="color: var(--accent-color); font-size: 1rem; margin-right: 8px; margin-top: 3px;">•</span>
-                    <span style="color: var(--default-color); font-size: 0.95rem; line-height: 1.5;">Creating sustainable self-care routines for long-term growth</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            </div> -->
 
           </div>
         </div>
@@ -672,8 +632,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>👤 About Naresh</h2>
-        <p>Part researcher, part reflector, and a full-time student of the human mind</p>
+        <h2>About Naresh</h2>
+        <p>Counseling Psychologist & Founder</p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -683,7 +643,7 @@
           <div class="col-lg-6 d-flex align-items-center justify-content-center" data-aos="fade-up" data-aos-delay="100">
             <div class="doctor-card">
               <div class="doctor-image-container">
-                <img src="assets/img/doctors/doctors-1.jpg" class="img-fluid rounded-circle" alt="Naresh">
+                <img src="assets/img/doctors/dr_shark.png" class="img-fluid rounded-circle" alt="Naresh">
                 <div class="social-overlay">
                   <div class="social-icons">
                     <a href=""><i class="bi bi-twitter-x"></i></a>
@@ -696,41 +656,14 @@
             </div>
           </div>
           <div class="col-lg-6 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
-            <h3>Hi, I'm Naresh</h3>
-            <h4 class="mb-3">Counseling Psychologist & Mental Health Educator</h4>
+            <h3>Hi, I'm Naresh Thakur</h3>
+            <h4 class="mb-3">Counseling Psychologist | Mental Health Educator | Founder, The Self-Care Lab</h4>
             <p class="mb-4">
-              Over the last 6 years, I've helped 100+ individuals make intentional changes in their lives — not with force, but with clarity. I'm the founder of <em>The Self-Care Lab</em>, and my work sits at the intersection of modern psychology and practical self-growth.
+              I help individuals create meaningful change — not through pressure or quick fixes, but through clarity, structure, and self-awareness.
             </p>
-            <p class="mb-4">
-              <strong>The goal?</strong> To help you build a personal self-care OS that actually works for your life, not just your ideal self.
+            <p class="mb-0">
+              At The Self-Care Lab, I blend modern psychology with practical self-growth tools to help you build a personal self-care operating system — one that works for your life, not just your ideal self.
             </p>
-            
-            <div class="row">
-              <div class="col-md-6">
-                <h5>I mix tools from:</h5>
-                <ul class="list-unstyled">
-                  <li><i class="bi bi-check-circle text-primary me-2"></i>Behavior Science</li>
-                  <li><i class="bi bi-check-circle text-primary me-2"></i>CBT-style structured reflection</li>
-                  <li><i class="bi bi-check-circle text-primary me-2"></i>Systems Thinking</li>
-                  <li><i class="bi bi-check-circle text-primary me-2"></i>Somatic & emotional check-ins</li>
-                </ul>
-              </div>
-              <div class="col-md-6">
-                <h5>Perfect for you if you're:</h5>
-                <ul class="list-unstyled">
-                  <li><i class="bi bi-arrow-right text-primary me-2"></i>Navigating identity shifts</li>
-                  <li><i class="bi bi-arrow-right text-primary me-2"></i>Dealing with burnout</li>
-                  <li><i class="bi bi-arrow-right text-primary me-2"></i>Managing emotional stress</li>
-                  <li><i class="bi bi-arrow-right text-primary me-2"></i>Tired of one-size-fits-all advice</li>
-                </ul>
-              </div>
-            </div>
-            
-            <div class="mt-4 p-3" style="background: rgba(165, 148, 249, 0.1); border-radius: 10px; border-left: 4px solid var(--accent-color);">
-              <p class="mb-0" style="font-style: italic;">
-                <strong>Background:</strong> Trained in CBT from the prestigious Beck Institute. I help young adults who feel stuck, emotionally overwhelmed, or unsure about who they are, build clarity through structured reflection and conscious self-work.
-              </p>
-            </div>
           </div>
         </div>
 
@@ -800,7 +733,7 @@
         <div class="row justify-content-center mb-5">
           <div class="col-lg-8 text-center" data-aos="fade-up">
             <h2>What You Get</h2>
-            <p>Comprehensive support designed to help you build lasting wellness habits through personalized, psychology-based approaches</p>
+              <p style="white-space: nowrap;">Comprehensive support to help you build lasting wellness habits through personalized, psychology-based approaches</p>
           </div>
         </div>
 
@@ -809,11 +742,13 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="feature-card h-100">
               <div class="feature-icon">
-                <i class="fas fa-brain"></i>
+                <i class="fas fa-comments"></i>
               </div>
               <div class="feature-content">
-                <h4>Structured CBT & Self-Awareness Sessions</h4>
-                <p>Evidence-based cognitive behavioral therapy techniques combined with self-awareness tools to help you understand and change negative thought patterns effectively.</p>
+                <h4>Counselling</h4>
+                <p><strong>What it is:</strong> A supportive process to help people deal with emotional or situational challenges.<br>
+                <strong>Focus:</strong> Self-exploration, coping, growth.<br>
+                <strong>Who offers it:</strong> Counsellor (trained in psychology/counselling)</p>
               </div>
             </div>
           </div><!-- End Feature Card -->
@@ -821,11 +756,13 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="feature-card h-100">
               <div class="feature-icon">
-                <i class="fas fa-shield-alt"></i>
+                <i class="fas fa-hand-holding-heart"></i>
               </div>
               <div class="feature-content">
-                <h4>Safe Space to Talk, Reflect & Be Challenged</h4>
-                <p>A confidential, judgment-free environment where you can openly discuss your concerns while being gently challenged to grow and develop new perspectives.</p>
+                <h4>Therapy</h4>
+                <p><strong>What it is:</strong> A broader term that includes counselling and psychotherapy.<br>
+                <strong>Focus:</strong> Healing emotional/mental issues.<br>
+                <strong>Who offers it:</strong> Counsellors, psychotherapists, clinical psychologists</p>
               </div>
             </div>
           </div><!-- End Feature Card -->
@@ -848,11 +785,13 @@
           <div class="col-lg-5 col-md-6" data-aos="fade-up" data-aos-delay="400">
             <div class="feature-card h-100">
               <div class="feature-icon">
-                <i class="fas fa-calendar-check"></i>
+                <i class="fas fa-user-md"></i>
               </div>
               <div class="feature-content">
-                <h4>Flexible Payment Options</h4>
-                <p>Choose what works for your lifestyle and budget with pay-per-session options or cost-effective bundle packages designed for your convenience.</p>
+                <h4>Psychotherapy</h4>
+                <p><strong>What it is:</strong> A deeper, long-term therapeutic process for unresolved trauma, mental illness, or behavioral issues.<br>
+                <strong>Focus:</strong> Insight, emotional healing.<br>
+                <strong>Who offers it:</strong> Clinical psychologists, psychotherapists</p>
               </div>
             </div>
           </div><!-- End Feature Card -->
@@ -860,11 +799,13 @@
           <div class="col-lg-5 col-md-6" data-aos="fade-up" data-aos-delay="500">
             <div class="feature-card h-100">
               <div class="feature-icon">
-                <i class="fas fa-tasks"></i>
+                <i class="fas fa-pills"></i>
               </div>
               <div class="feature-content">
-                <h4>Follow-up Activities & Personalized Nudges</h4>
-                <p>Stay on track with structured follow-up activities, task-based assignments, and gentle nudges designed to reinforce your progress and maintain momentum between sessions.</p>
+                <h4>Psychiatry</h4>
+                <p><strong>What it is:</strong> A branch of medicine focused on diagnosing and treating mental disorders using medication.<br>
+                <strong>Focus:</strong> Mental illness, chemical imbalances.<br>
+                <strong>Who offers it:</strong> Psychiatrist (medical doctor – MBBS + MD Psychiatry)</p>
               </div>
             </div>
           </div><!-- End Feature Card -->
@@ -1035,8 +976,8 @@
       </div>
 
     </section><!-- /Appointment Section -->
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section">
+     
+        <section id="testimonials" class="testimonials section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -1146,6 +1087,7 @@
       </div>
 
     </section><!-- /Testimonials Section -->
+
 
     <!-- Pricing Section -->
     <section id="pricing" class="pricing section">
