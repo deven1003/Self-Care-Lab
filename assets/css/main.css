@@ -61,8 +61,9 @@ p, li {
   font-weight: bold;
 }
 
+
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root {
+:root { 
   --background-color: #FDF6ED; /* Cream - calm, grounding, safe */
   --default-color: #3D2321; /* Maroon - emotional depth, transformation */
   --heading-color: #3D2321; /* Maroon for headings */
@@ -74,6 +75,7 @@ p, li {
   --cta-secondary-color: #716F81; /* Deep Maroon for secondary CTA */
   --border-color: #F5E6D6; /* Light Cream for borders */
 }
+
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: #3D2321;  /* Maroon for nav links */
@@ -83,6 +85,7 @@ p, li {
   --nav-dropdown-color: #3D2321; /* Maroon for dropdown links */
   --nav-dropdown-hover-color: #B97A95; /* Mustard Gold on hover */
 }
+
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
@@ -1097,6 +1100,12 @@ section,
   padding: 80px 0;
   position: relative;
   clip-path: inset(0);
+  background-color: var(--surface-color);
+  /* CTA background image */
+  background-image: url('../img/bg-purple.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .call-to-action .container {
@@ -1104,19 +1113,32 @@ section,
   z-index: 3;
 }
 
+/* Soft overlay to keep purple text legible on images */
+.call-to-action::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0);
+  z-index: 1;
+  pointer-events: none;
+}
+
 .call-to-action h3 {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--default-color);
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--accent-color);
 }
 
 .call-to-action p {
-  color: var(--default-color);
+  color: #000000;
+  font-size: 1.125rem; /* ~18px */
+  font-weight: 700; /* ensure bold as requested */
+  line-height: 1.65;
 }
 
 .call-to-action .cta-btn {
   font-family: var(--heading-font);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
   display: inline-block;
@@ -1124,22 +1146,46 @@ section,
   border-radius: 4px;
   transition: 0.3s;
   margin: 10px;
-  border: 2px solid var(--contrast-color);
-  color: var(--contrast-color);
+  border: 2px solid var(--accent-color);
+  background: var(--accent-color); /* default filled purple */
+  color: var(--surface-color);
 }
 
 .call-to-action .cta-btn:hover {
-  background: var(--contrast-color);
-  color: var(--cta-primary-color);
-  border: 2px solid var(--cta-primary-color);
+  background: color-mix(in srgb, var(--accent-color), black 12%);
+  border: 2px solid color-mix(in srgb, var(--accent-color), black 12%);
+  color: var(--surface-color);
+}
+
+@media (max-width: 768px) {
+  .call-to-action h3 {
+    font-size: 30px;
+  }
+  .call-to-action p {
+    font-size: 1.05rem; /* slightly smaller on mobile */
+  }
 }
 
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
+.about .section-title h2 {
+  color: var(--accent-color);
+}
+.about .section-title p {
+  color: var(--default-color);
+}
 .about .content h3 {
-  font-size: 1.75rem;
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--accent-color);
+}
+.about .content h4 {
+  color: var(--accent-color);
   font-weight: 700;
+}
+.about .content p {
+  color: var(--default-color);
 }
 
 .about .content ul {
