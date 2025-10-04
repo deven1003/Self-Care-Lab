@@ -196,3 +196,23 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const phoneLink = document.querySelector(".phone-link");
+
+  if (phoneLink) {
+    phoneLink.addEventListener("click", function (event) {
+      const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+
+      if (!isMobile) {
+        event.preventDefault(); // Prevent dialing on desktop
+
+        const phoneNumber = "+917506802501";
+        navigator.clipboard.writeText(phoneNumber).then(() => {
+          alert("Phone number copied: " + phoneNumber);
+        });
+      }
+    });
+  }
+});
