@@ -1,34 +1,4 @@
-.btn-get-started {
-  font-weight: bold !important;
-}
-.cta-btn {
-  font-weight: bold !important;
-}
-/* Force bold for key sections */
-.text-center h3,
-.text-center p {
-  font-weight: bold;
-}
-.feature-content h4 {
-  font-weight: bold;
-}
-.feature-content p {
-  font-weight: bold !important;
-}
-/* Force bold for navmenu links */
-#navmenu a,
-#navmenu .dropdown > a,
-#navmenu .dropdown ul li a {
-  font-weight: bold;
-}
 /* Force bold for feature cards and topbar info */
-.feature-content h4,
-.feature-content p {
-  font-weight: bold;
-}
-.topbar .align-items-center {
-  font-weight: bold;
-}
 /**
 * Template Name: Medicio
 * Template URL: https://bootstrapmade.com/medicio-free-bootstrap-theme/
@@ -42,6 +12,7 @@
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /* Fonts */
+/* Poppins font is loaded from Google Fonts in HTML head */
 @font-face {
   font-family: 'SoDo Sans Thin';
   src: url('../fonts/SoDoSans-Thin.ttf') format('truetype');
@@ -50,28 +21,23 @@
 }
 
 :root {
-  --default-font: 'SoDo Sans Thin', Arial, sans-serif;
-  --heading-font: 'SoDo Sans Thin', Arial, sans-serif;
-  --nav-font: 'SoDo Sans Thin', Arial, sans-serif;
+  --default-font: 'Poppins', sans-serif;
+  --heading-font: 'Poppins', sans-serif;
+  --nav-font: 'Poppins', sans-serif;
 }
-/* Simulate bold for headings, nav, paragraphs, and lists */
-h1, h2, h3, h4, h5, h6, .navbar, .nav, .nav-link, .menu, .site-title, .footer-links h4,
-p, li {
-  font-family: var(--heading-font);
-  font-weight: bold;
-}
+
 
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #FDF6ED; /* Cream - calm, grounding, safe */
+  --background-color: #EFE9D5; /* Light Green - calm, natural, refreshing */
   --default-color: #3D2321; /* Maroon - emotional depth, transformation */
-  --heading-color: #3D2321; /* Maroon for headings */
-  --accent-color: #B97A95; /* Mustard Gold - optimism, wisdom, confidence */
+  --heading-color: #497D74; /* Dark Green for headings */
+  --accent-color: #71BBB2; /* Mustard Gold - optimism, wisdom, confidence */
   --surface-color: #FFFFFF; /* White for cards/surfaces */
   --contrast-color: #3D2321; /* Maroon for contrast text */
   /* Updated CTA and border colors */
-  --cta-primary-color: #B97A95; /* Mustard Gold for primary CTA */
+  --cta-primary-color: #71BBB2; /* Mustard Gold for primary CTA */
   --cta-secondary-color: #716F81; /* Deep Maroon for secondary CTA */
   --border-color: #F5E6D6; /* Light Cream for borders */
 }
@@ -79,11 +45,11 @@ p, li {
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: #3D2321;  /* Maroon for nav links */
-  --nav-hover-color: #B97A95; /* Mustard Gold on hover */
+  --nav-hover-color: #71BBB2; /* Mustard Gold on hover */
   --nav-mobile-background-color: #FDF6ED; /* Cream for mobile nav */
   --nav-dropdown-background-color: #FFFFFF; /* White for dropdown */
   --nav-dropdown-color: #3D2321; /* Maroon for dropdown links */
-  --nav-dropdown-hover-color: #B97A95; /* Mustard Gold on hover */
+  --nav-dropdown-hover-color: #71BBB2; /* Mustard Gold on hover */
 }
 
 
@@ -360,7 +326,6 @@ h6 {
     padding: 18px 15px;
     font-size: 13px;
     font-family: var(--nav-font);
-    font-weight: 500;
     text-transform: uppercase;
     display: flex;
     align-items: center;
@@ -481,7 +446,6 @@ h6 {
     padding: 10px 20px;
     font-family: var(--nav-font);
     font-size: 17px;
-    font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -629,7 +593,6 @@ h6 {
 
 .footer h4 {
   font-size: 16px;
-  font-weight: bold;
   position: relative;
   padding-bottom: 12px;
 }
@@ -841,7 +804,6 @@ section,
 
 .section-title h2 {
   font-size: 32px;
-  font-weight: 700;
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
@@ -872,15 +834,21 @@ section,
 }
 
 .hero .carousel {
-  width: 100%;
   min-height: 70vh;
   padding: 0;
   margin: 0;
   position: relative;
 }
 
-@media (max-height: 500px),
+/* @media (max-height: 500px),
 (max-width: 580px) {
+  .hero .carousel {
+    min-height: 100vh;
+  }
+} */
+
+@media (max-height: 300px),
+(max-width: 320px) {
   .hero .carousel {
     min-height: 100vh;
   }
@@ -928,7 +896,6 @@ section,
 .hero h2 {
   margin-bottom: 20px;
   font-size: 36px;
-  font-weight: 700;
 }
 
 @media (max-width: 768px) {
@@ -938,7 +905,6 @@ section,
 }
 
 .hero .btn-get-started {
-  font-weight: 400;
   font-size: 14px;
   letter-spacing: 1px;
   display: inline-block;
@@ -1132,7 +1098,7 @@ section,
 .call-to-action p {
   color: #000000;
   font-size: 1.125rem; /* ~18px */
-  font-weight: 700; /* ensure bold as requested */
+  font-weight: 400; /* ensure bold as requested */
   line-height: 1.65;
 }
 
@@ -1170,7 +1136,7 @@ section,
 # About Section
 --------------------------------------------------------------*/
 .about .section-title h2 {
-  color: var(--accent-color);
+  color: var(--heading-color);
 }
 .about .section-title p {
   color: var(--default-color);
@@ -1178,10 +1144,10 @@ section,
 .about .content h3 {
   font-size: 1.9rem;
   font-weight: 800;
-  color: var(--accent-color);
+  color: var(--heading-color);
 }
 .about .content h4 {
-  color: var(--accent-color);
+  color: var(--heading-color);
   font-weight: 700;
 }
 .about .content p {
@@ -1532,7 +1498,6 @@ section,
 
 .testimonials .testimonial-item h3 {
   font-size: 18px;
-  font-weight: bold;
   margin: 10px 0 5px 45px;
 }
 
@@ -1751,7 +1716,6 @@ section,
 .pricing .pricing-item h4 span {
   color: color-mix(in srgb, var(--default-color), transparent 40%);
   font-size: 16px;
-  font-weight: bold !important;
 }
 
 .pricing .pricing-item ul {
@@ -1823,6 +1787,12 @@ section,
 /*--------------------------------------------------------------
 # Faq Section
 --------------------------------------------------------------*/
+
+/* FAQ Section Background Override */
+.faq.light-background {
+  --background-color: #EFE9D5;
+}
+
 .faq .faq-container .faq-item {
   background-color: var(--surface-color);
   position: relative;
@@ -1907,6 +1877,12 @@ section,
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
+
+/* Contact Section Background Override - Match other sections */
+.contact.section > div[style*="background: linear-gradient"] {
+  background: #EFE9D5 !important;
+}
+
 .contact .info-item {
   background-color: var(--surface-color);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
