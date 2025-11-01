@@ -51,6 +51,8 @@
           </div>
         </div>
       </div>
+
+      
     </div><!-- End Top Bar -->
 
     <div class="branding d-flex align-items-center">
@@ -70,9 +72,9 @@
             <li class="dropdown"><a href="#"><span>Resources</span> <i
                   class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
-                <li><a href="https://www.instagram.com/devenkalathiya/" target="_blank">Instagram Preview</a></li>
+        
                 <li><a href="#" target="_blank">Personal Blog</a></li>
-                <li><a href="#" target="_blank">Articles & Research</a></li>
+               
                 <li><a href="index.html#testimonials">Success Stories</a></li>
               </ul>
             </li>
@@ -176,12 +178,172 @@
           </div>
         </div>
 
-   
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
+      <!-- Insert prebooking flow right after services (keeps it separate from booking widget) -->
+      <div id="prebooking-flow" class="prebooking-flow container mb-4" style="display:none;">
+        <div class="row align-items-start">
+          <div class="col-12">
+            <div class="card p-3">
+              <div class="d-flex gap-3 align-items-start">
+                <div class="pre-steps d-flex gap-2">
+                  <div class="pre-step" id="pre-step-1" data-step="1"><div class="num">1</div><div class="label">Service Selected</div></div>
+                  <div class="pre-step" id="pre-step-2" data-step="2"><div class="num">2</div><div class="label">Consent Form</div></div>
+                  <div class="pre-step" id="pre-step-3" data-step="3"><div class="num">3</div><div class="label">Proceed to Booking</div></div>
+                </div>
+                <div class="flex-grow-1 pre-step-content" id="pre-step-content">
+                  <div id="pre-step-1-content" class="pre-content" style="display:none;">Select a service to begin the booking flow.</div>
+                  <div id="pre-step-2-content" class="pre-content" style="display:none;">
+                    <!-- Inline site consent form (expanded multi-section Counselling Consent Form) -->
+                    <form id="pre-consent-form">
+                      <div class="mb-3"><strong>Counselling Consent Form</strong>
+                        <div class="small text-muted">Please complete this form before beginning counselling with Naresh Thakur. Your information will remain confidential and is used only for counselling purposes.</div>
+                      </div>
+
+                      <h6 class="mt-3">Section 1 — Personal Information</h6>
+                      <div class="row">
+                        <div class="col-md-6 mb-2">
+                          <label class="form-label">Full Name</label>
+                          <input required name="fullName" class="form-control" placeholder="Full name">
+                        </div>
+                        <div class="col-md-6 mb-2">
+                          <label class="form-label">Age / Date of Birth</label>
+                          <input name="dob" class="form-control" placeholder="e.g. 1990-05-31 or Age: 35">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-4 mb-2">
+                          <label class="form-label">Gender</label>
+                          <select name="gender" class="form-select">
+                            <option value="">Prefer not to say</option>
+                            <option>Female</option>
+                            <option>Male</option>
+                            <option>Non-binary</option>
+                            <option>Other</option>
+                          </select>
+                        </div>
+                        <div class="col-md-4 mb-2">
+                          <label class="form-label">Contact Number</label>
+                          <input name="contactNumber" class="form-control" placeholder="Phone or WhatsApp number">
+                        </div>
+                        <div class="col-md-4 mb-2">
+                          <label class="form-label">Email</label>
+                          <input required name="email" type="email" class="form-control" placeholder="Email address">
+                        </div>
+                      </div>
+                      <div class="mb-2">
+                        <label class="form-label">Address</label>
+                        <input name="address" class="form-control" placeholder="Address (optional)">
+                      </div>
+
+                      <h6 class="mt-3">Emergency Contact</h6>
+                      <div class="row">
+                        <div class="col-md-4 mb-2">
+                          <label class="form-label">Name</label>
+                          <input name="emergencyName" class="form-control" placeholder="Emergency contact name">
+                        </div>
+                        <div class="col-md-4 mb-2">
+                          <label class="form-label">Relationship</label>
+                          <input name="emergencyRelationship" class="form-control" placeholder="e.g. parent, spouse">
+                        </div>
+                        <div class="col-md-4 mb-2">
+                          <label class="form-label">Contact Number</label>
+                          <input name="emergencyContact" class="form-control" placeholder="Emergency contact number">
+                        </div>
+                      </div>
+
+                      <div class="mb-3">
+                        <label class="form-label">How did you hear about me?</label>
+                        <input name="howHeard" class="form-control" placeholder="Referral, Google, Social, etc.">
+                      </div>
+
+                      <h6 class="mt-3">Section 2 — Presenting Concerns</h6>
+                      <div class="mb-2">
+                        <label class="form-label">What brings you to counselling at this time?</label>
+                        <textarea name="presentingConcerns" class="form-control" rows="4" placeholder="Please describe the main concerns, issues, or reasons that brought you to counselling."></textarea>
+                      </div>
+
+                      <h6 class="mt-3">Section 2b — Personal & Medical Background</h6>
+                      <div class="mb-2 small text-muted">If yes, briefly explain each where applicable.</div>
+                      <div class="row">
+                        <div class="col-md-4 mb-2">
+                          <label class="form-label">Current/previous diagnosis? (Y/N)</label>
+                          <input name="medicalHistory" class="form-control" placeholder="Yes / No">
+                        </div>
+                        <div class="col-md-8 mb-2">
+                          <label class="form-label">If yes, please list / explain</label>
+                          <input name="medicalDetails" class="form-control" placeholder="Details (medication, date, reason)">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-4 mb-2">
+                          <label class="form-label">Previous counselling or therapy? (Y/N)</label>
+                          <input name="counsellingHistory" class="form-control" placeholder="Yes / No">
+                        </div>
+                        <div class="col-md-8 mb-2">
+                          <label class="form-label">If yes, when and for what reason?</label>
+                          <input name="counsellingDetails" class="form-control" placeholder="Brief details">
+                        </div>
+                      </div>
+
+                      <h6 class="mt-3">Section 3 — Counselling Agreement (Informed Consent)</h6>
+                      <div class="mb-2 small text-muted">Please read the following and indicate your agreement.</div>
+                      <div class="mb-2">
+                        <strong>Confidentiality</strong>
+                        <div class="small text-muted">All sessions are private and confidential. Information will not be shared without your written consent, except in cases of risk of harm to self/others, child abuse, or legal requirements.</div>
+                      </div>
+                      <div class="mb-2">
+                        <strong>Session Duration</strong>
+                        <div class="small text-muted">Each session lasts approximately 90 minutes.</div>
+                      </div>
+                      <div class="mb-2">
+                        <strong>Fees & Payment</strong>
+                        <div class="small text-muted">Session fee is ₹1500. Payment is to be made before/after each session (or as per package agreed).</div>
+                      </div>
+                      <div class="mb-2">
+                        <strong>Cancellation Policy</strong>
+                        <div class="small text-muted">Please inform at least 24 hours in advance if you need to cancel/reschedule. Otherwise, the full session fee may apply.</div>
+                      </div>
+                      <div class="mb-2">
+                        <strong>Voluntary Participation</strong>
+                        <div class="small text-muted">Counselling is a collaborative process. You have the right to discontinue at any time.</div>
+                      </div>
+                      <div class="mb-2">
+                        <strong>Record Keeping</strong>
+                        <div class="small text-muted">Brief notes may be maintained for professional purposes, kept confidential.</div>
+                      </div>
+
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="preConsentCheck" name="consentAgree" value="yes" required>
+                        <label class="form-check-label" for="preConsentCheck">I have read and understood the information above. I voluntarily agree to participate in counselling with Naresh Thakur.</label>
+                      </div>
+
+                      <h6 class="mt-3">Section 4 — Feedback (optional)</h6>
+                      <div class="mb-2">
+                        <label class="form-label">Any comments or expectations?</label>
+                        <textarea name="feedback" class="form-control" rows="3" placeholder="Feedback (optional)"></textarea>
+                      </div>
+
+                      <div class="d-flex gap-2 mt-3 align-items-center">
+                        <button class="btn btn-primary" type="submit">Submit & Continue</button>
+                        <div id="pre-consent-status" class="small text-muted ms-3">Not submitted</div>
+                      </div>
+                    </form>
+                  </div>
+                  <div id="pre-step-3-content" class="pre-content" style="display:none;">
+                    <p>All set — proceed to book your slot.</p>
+                    <button id="pre-go-to-book" class="btn btn-success">Go to Booking</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" data-aos="fade-up" data-aos-delay="100">
 
           <!-- Single full-width booking widget (Available Times removed) -->
           <div class="col-lg-12 mb-4">
-            <div class="booking-widget-section">
+            <div id="booking-widget-section" class="booking-widget-section" style="display:none;">
               <div class="section-header">
                 <h3><i class="bi bi-calendar-plus me-2"></i>Book Your Slot</h3>
                 <p id="selected-service-info">Counselling Session 1:1 - ₹2,200 | 60 minutes</p>
@@ -193,90 +355,14 @@
                      data-url="https://calendly.com/theselfcarebooster/new-meeting" 
                      style="min-width:320px;height:600px;">
                 </div>
+                <!-- Booking widget shown after consent; overlay/lock removed -->
               </div>
             </div>
           </div>
 
         </div>
 
-        <!-- Additional Information -->
-        <div class="row mt-5">
-          
-          <!-- Booking Process -->
-          <div class="col-lg-6 mb-4" data-aos="fade-right">
-            <div class="info-card">
-              <h4><i class="bi bi-list-check me-2"></i>Booking Process</h4>
-              <div class="process-steps">
-                <div class="step">
-                  <span class="step-number">1</span>
-                  <div class="step-content">
-                    <h6>Select Service</h6>
-                    <p>Choose individual counseling, couple therapy, or free consultation</p>
-                  </div>
-                </div>
-                <div class="step">
-                  <span class="step-number">2</span>
-                  <div class="step-content">
-                    <h6>Pick Time Slot</h6>
-                    <p>Select from available times that work for your schedule</p>
-                  </div>
-                </div>
-                <div class="step">
-                  <span class="step-number">3</span>
-                  <div class="step-content">
-                    <h6>Confirm Details</h6>
-                    <p>Provide contact information and session preferences</p>
-                  </div>
-                </div>
-                <div class="step">
-                  <span class="step-number">4</span>
-                  <div class="step-content">
-                    <h6>Get Confirmation</h6>
-                    <p>Receive instant confirmation with session details and meeting link</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Policies & Guidelines -->
-          <div class="col-lg-6 mb-4" data-aos="fade-left">
-            <div class="info-card">
-              <h4><i class="bi bi-shield-exclamation me-2"></i>Important Information</h4>
-              <div class="policies">
-                <div class="policy-item">
-                  <i class="bi bi-clock-history"></i>
-                  <div>
-                    <strong>Cancellation Policy</strong>
-                    <p>24-hour notice required for cancellations or rescheduling</p>
-                  </div>
-                </div>
-                <div class="policy-item">
-                  <i class="bi bi-camera-video"></i>
-                  <div>
-                    <strong>Session Format</strong>
-                    <p>Online sessions via secure video call or in-person at clinic</p>
-                  </div>
-                </div>
-                <div class="policy-item">
-                  <i class="bi bi-shield-lock"></i>
-                  <div>
-                    <strong>Privacy & Confidentiality</strong>
-                    <p>All sessions are strictly confidential and HIPAA compliant</p>
-                  </div>
-                </div>
-                <div class="policy-item">
-                  <i class="bi bi-credit-card"></i>
-                  <div>
-                    <strong>Payment</strong>
-                    <p>Secure payment options available including UPI, card, and bank transfer</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
+   
 
      
       </div>
@@ -325,6 +411,7 @@
       
       // Calendly URLs for different services
       const calendlyUrls = {
+      
         individual: 'https://calendly.com/theselfcarebooster/new-meeting',
         couple: 'https://calendly.com/theselfcarebooster/new-meeting',
         consultation: 'https://calendly.com/theselfcarebooster/new-meeting'
@@ -336,8 +423,90 @@
   couple: 'Self Care Pack - ₹5,999 (3 Sessions + Resources)',
   consultation: 'Monthly Mentorship Program - ₹7,500 / month'
       };
+
+  // Consent storage helpers
+  function normalizeEmail(e){ try{ return (e||'').toString().trim().toLowerCase(); }catch(err){ return ''; } }
+  function setConsentForEmail(email){ try{ const em = normalizeEmail(email); if(em){ localStorage.setItem('consentAcknowledged_v1:' + em, 'true'); localStorage.setItem('consentAcknowledged_v1_last', em); } else { localStorage.setItem('consentAcknowledged_v1', 'true'); } }catch(e){} }
+  function hasConsentForEmail(email){ try{ const em = normalizeEmail(email); if(em && localStorage.getItem('consentAcknowledged_v1:' + em) === 'true') return true; if(localStorage.getItem('consentAcknowledged_v1') === 'true') return true; return false; }catch(e){ return false; } }
+  function hasAnyConsent(){ try{ if(localStorage.getItem('consentAcknowledged_v1') === 'true') return true; for(let i=0;i<localStorage.length;i++){ const k = localStorage.key(i); if(k && k.indexOf('consentAcknowledged_v1:')===0 && localStorage.getItem(k)==='true') return true; } return false; }catch(e){ return false; } }
+
+      // Simple helper to reveal the booking section after consent is submitted.
+      function showBookingSection(){
+        try{
+          const container = document.querySelector('.booking-widget-section');
+          if(container){ container.style.display = 'block'; }
+          try{ setupBookingInterceptor(); }catch(e){}
+        }catch(e){ console.warn('showBookingSection failed', e); }
+      }
+
+      // When consent is not yet given we add a transparent interceptor DIV over the Calendly iframe
+      // so clicks are captured and we can show a helpful toast asking users to complete the consent form.
+      function setupBookingInterceptor(){
+        try{
+          const calendlyContainer = document.querySelector('.calendly-widget-container');
+          if(!calendlyContainer) return;
+          // ensure container has positioning so absolute child can cover it
+          const prevPos = window.getComputedStyle(calendlyContainer).position;
+          if(prevPos === 'static' || !prevPos) calendlyContainer.style.position = 'relative';
+
+          // remove any existing interceptor
+          const existing = calendlyContainer.querySelector('.booking-interceptor');
+          if(existing) existing.remove();
+
+          // if consent already acknowledged (legacy flag or per-email), don't intercept
+          if(hasAnyConsent()) return;
+
+          const interceptor = document.createElement('div');
+          interceptor.className = 'booking-interceptor';
+          // use inline styles to keep patch minimal and robust
+          interceptor.style.position = 'absolute';
+          interceptor.style.inset = '0';
+          interceptor.style.zIndex = '12';
+          interceptor.style.background = 'transparent';
+          interceptor.style.cursor = 'pointer';
+
+          interceptor.addEventListener('click', function(e){
+            e.preventDefault(); e.stopPropagation();
+            try{
+              // show professional toast and guide user to the consent form
+              showPreConsentToast('Please complete the consent form before booking', 'warning');
+              const pre = document.getElementById('prebooking-flow');
+              if(pre){ setTimeout(()=>{ try{ pre.scrollIntoView({behavior:'smooth', block:'center'}); }catch(err){} }, 120); }
+            }catch(err){ console.warn('interceptor click failed', err); }
+          });
+
+          // Also defensively disable pointer-events on the Calendly iframe (if it exists)
+          try{
+            const injectedFrame = calendlyContainer.querySelector('iframe');
+            if(injectedFrame){
+              // store previous pointer-events if not stored
+              if(!calendlyContainer.dataset._orig_pointer) calendlyContainer.dataset._orig_pointer = injectedFrame.style.pointerEvents || '';
+              injectedFrame.style.pointerEvents = 'none';
+            }
+          }catch(e){ /* ignore */ }
+
+          calendlyContainer.appendChild(interceptor);
+        }catch(err){ console.warn('setupBookingInterceptor failed', err); }
+      }
+
+      function removeBookingInterceptor(){
+        try{
+          const calendlyContainer = document.querySelector('.calendly-widget-container');
+          if(!calendlyContainer) return;
+          const existing = calendlyContainer.querySelector('.booking-interceptor');
+          if(existing) existing.remove();
+          // restore pointer-events on Calendly iframe if we changed it
+          try{
+            const injectedFrame = calendlyContainer.querySelector('iframe');
+            if(injectedFrame && calendlyContainer.dataset._orig_pointer !== undefined){
+              injectedFrame.style.pointerEvents = calendlyContainer.dataset._orig_pointer || '';
+              delete calendlyContainer.dataset._orig_pointer;
+            }
+          }catch(e){ /* ignore */ }
+        }catch(e){ /* ignore */ }
+      }
       
-      // Handle service selection: only update UI selection and displayed label.
+      // Handle service selection: update UI selection and displayed label, and show pre-booking flow
       selectButtons.forEach(button => {
         button.addEventListener('click', function() {
           const serviceType = this.getAttribute('data-calendly');
@@ -353,6 +522,28 @@
           if (serviceDetails[serviceType]) {
             serviceInfo.textContent = serviceDetails[serviceType];
           }
+
+          // Show pre-booking flow (separate area) and set step states
+          try{
+            const preFlow = document.getElementById('prebooking-flow');
+            if(preFlow){
+              preFlow.style.display = '';
+              try{ setupBookingInterceptor(); }catch(e){}
+              // scroll to prebooking flow so user sees the consent form immediately
+              try{ setTimeout(()=>{ preFlow.scrollIntoView({behavior:'smooth', block:'center'}); }, 120); }catch(e){}
+              // set pre-step visuals: 1 done, 2 active, 3 locked
+              const pre1 = document.getElementById('pre-step-1');
+              const pre2 = document.getElementById('pre-step-2');
+              const pre3 = document.getElementById('pre-step-3');
+              [pre1,pre2,pre3].forEach(el=>{ if(el){ el.classList.remove('active','done','locked'); } });
+              if(pre1) pre1.classList.add('done');
+              if(pre2) pre2.classList.add('active');
+              if(pre3) pre3.classList.add('locked');
+              // show step2 content (inline form)
+              const c1 = document.getElementById('pre-step-1-content'); const c2 = document.getElementById('pre-step-2-content'); const c3 = document.getElementById('pre-step-3-content');
+              if(c1) c1.style.display='none'; if(c2) c2.style.display=''; if(c3) c3.style.display='none';
+            }
+          }catch(err){ /* ignore */ }
         });
       });
       
@@ -376,9 +567,9 @@
         const targetCard = Array.from(serviceCards).find(c => c.getAttribute('data-service') === svc || c.querySelector(`[data-calendly="${svc}"]`));
         if(targetBtn){
           targetBtn.click();
-          // scroll to booking-section
-          const el = document.getElementById('booking-section');
-          if(el){ setTimeout(()=> el.scrollIntoView({behavior:'smooth', block:'start'}), 200); }
+          // scroll to prebooking-flow (show consent form) when auto-selecting a service
+          const el = document.getElementById('prebooking-flow');
+          if(el){ setTimeout(()=> el.scrollIntoView({behavior:'smooth', block:'center'}), 200); }
         } else if(targetCard){
           // simulate selecting the card's button
           const btn = targetCard.querySelector('.btn-select-service');
@@ -389,8 +580,21 @@
       // Smooth scrolling for anchor links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+          // If user is trying to jump to booking section but hasn't completed consent, stop and guide them
+          const href = this.getAttribute('href');
+          if(href === '#booking-section' && !hasAnyConsent()){
+            e.preventDefault();
+            try{
+              showPreConsentToast('Please complete the consent form before booking', 'warning');
+              const pre = document.getElementById('prebooking-flow');
+              if(pre){ setTimeout(()=>{ try{ pre.scrollIntoView({behavior:'smooth', block:'center'}); }catch(err){} }, 120); }
+              // ensure interceptor is present
+              try{ setupBookingInterceptor(); }catch(err){}
+            }catch(err){ console.warn('booking anchor interception failed', err); }
+            return;
+          }
           e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
+          const target = document.querySelector(href);
           if (target) {
             target.scrollIntoView({
               behavior: 'smooth',
@@ -400,8 +604,331 @@
         });
       });
       
+      // Prebooking flow behavior: wire inline form and go-to-book
+      try{
+        // Google Form configuration (optional)
+        // To enable posting site form responses into your Google Form, set
+        // `formAction` to the Google Form's `formResponse` endpoint and
+        // fill `fieldMap` with your site field -> Google `entry.*` names.
+        
+        // fieldMap: { name: 'entry.123456789', email: 'entry.987654321', phone: 'entry.111222333' }
+        const googleFormConfig = {
+          // POST endpoint for Google Forms (use /formResponse)
+        
+           formAction: 'https://docs.google.com/forms/d/1LZF1uUD3B406RLP3A49CjNo_c1yBXY2zQDzPfpaQ0XM/formResponse',
+          // Mapping: site field name -> Google Form entry.* name
+          // Mapping: site field name -> Google Form entry.* name
+          fieldMap: {
+            fullName: 'entry.1348476831',
+            dob: 'entry.858441035',
+            gender: 'entry.834410032',
+            contactNumber: 'entry.1808268710',
+            email: 'entry.1449635035',
+            address: 'entry.1335824046',
+            emergencyName: 'entry.1709044377',
+            emergencyRelationship: 'entry.1679138575',
+            emergencyContact: 'entry.593998576',
+            howHeard: 'entry.637344195'
+          ,
+            // Presenting concerns & medical/background
+            presentingConcerns: 'entry.2008571777',
+            medicalHistory: 'entry.1523461880',
+            medicalDetails: 'entry.1377747135',
+            counsellingDetails: 'entry.1061699855',
+            // Consent and feedback
+            consentAgree: 'entry.1304327127_sentinel',
+            feedback: 'entry.993163684'
+          }
+        };
+
+        // Helper: post data to Google Form using a hidden iframe + form (no CORS)
+        function postToGoogleForm(data, onDone, onError){
+          try{
+            if(!googleFormConfig.formAction || Object.keys(googleFormConfig.fieldMap).length===0){
+              (onError||function(){})(new Error('googleFormConfig not configured')); return;
+            }
+            console.log('[postToGoogleForm] starting', googleFormConfig.formAction);
+            // build a simple map of the inputs we're about to send for debugging
+            const mapped = Object.keys(googleFormConfig.fieldMap).reduce((acc,k)=>{ acc[googleFormConfig.fieldMap[k]] = data[k]||''; return acc; }, {});
+            console.log('[postToGoogleForm] mapped payload:', mapped);
+            const iframeName = 'gf-post-iframe-' + Date.now();
+            const iframe = document.createElement('iframe');
+            iframe.name = iframeName;
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+
+            const form = document.createElement('form');
+            form.action = googleFormConfig.formAction;
+            form.method = 'POST';
+            form.target = iframeName;
+            form.style.display = 'none';
+
+            // map data keys to Google entry.* fields
+            Object.keys(googleFormConfig.fieldMap).forEach(k => {
+              const entryName = googleFormConfig.fieldMap[k];
+              const input = document.createElement('input');
+              input.type = 'hidden';
+              input.name = entryName;
+              input.value = data[k] || '';
+              form.appendChild(input);
+            });
+
+            // Add a small timeout/fallback: treat success after load or 3s
+            let finished = false;
+            function cleanupAndDone(err){
+              if(finished) return; finished = true;
+              setTimeout(()=>{
+                try{ if(form && form.parentNode) form.parentNode.removeChild(form); }catch(e){}
+                try{ if(iframe && iframe.parentNode) iframe.parentNode.removeChild(iframe); }catch(e){}
+              }, 250);
+              if(err){ (onError||function(){})(err); } else { (onDone||function(){})(); }
+            }
+
+            iframe.addEventListener('load', function(){ console.log('[postToGoogleForm] iframe load'); cleanupAndDone(); });
+            // fallback
+            const fallbackTimer = setTimeout(() => { cleanupAndDone(); }, 3000);
+
+            document.body.appendChild(form);
+            // submit
+            try{ form.submit(); }catch(e){ clearTimeout(fallbackTimer); cleanupAndDone(e); }
+          }catch(err){ (onError||function(){})(err); }
+        }
+
+        const preForm = document.getElementById('pre-consent-form');
+        if(preForm){
+          preForm.addEventListener('submit', function(ev){
+            ev.preventDefault();
+
+            // collect site form fields (expanded consent form)
+            const formData = {
+              fullName: (preForm.querySelector('[name="fullName"]')||{value:''}).value.trim(),
+              dob: (preForm.querySelector('[name="dob"]')||{value:''}).value.trim(),
+              gender: (preForm.querySelector('[name="gender"]')||{value:''}).value.trim(),
+              contactNumber: (preForm.querySelector('[name="contactNumber"]')||{value:''}).value.trim(),
+              email: (preForm.querySelector('[name="email"]')||{value:''}).value.trim(),
+              address: (preForm.querySelector('[name="address"]')||{value:''}).value.trim(),
+              emergencyName: (preForm.querySelector('[name="emergencyName"]')||{value:''}).value.trim(),
+              emergencyRelationship: (preForm.querySelector('[name="emergencyRelationship"]')||{value:''}).value.trim(),
+              emergencyContact: (preForm.querySelector('[name="emergencyContact"]')||{value:''}).value.trim(),
+              howHeard: (preForm.querySelector('[name="howHeard"]')||{value:''}).value.trim(),
+              presentingConcerns: (preForm.querySelector('[name="presentingConcerns"]')||{value:''}).value.trim(),
+              medicalHistory: (preForm.querySelector('[name="medicalHistory"]')||{value:''}).value.trim(),
+              medicalDetails: (preForm.querySelector('[name="medicalDetails"]')||{value:''}).value.trim(),
+              counsellingHistory: (preForm.querySelector('[name="counsellingHistory"]')||{value:''}).value.trim(),
+              counsellingDetails: (preForm.querySelector('[name="counsellingDetails"]')||{value:''}).value.trim(),
+              consentAgree: (preForm.querySelector('[name="consentAgree"]')||{checked:false}).checked ? 'yes' : 'no',
+              feedback: (preForm.querySelector('[name="feedback"]')||{value:''}).value.trim()
+            };
+
+            function onConsentSet(){
+              try{ setConsentForEmail(formData.email); }catch(e){}
+              // mark pre-step2 done and enable pre-step3
+              const pre2 = document.getElementById('pre-step-2'); const pre3 = document.getElementById('pre-step-3');
+              if(pre2) { pre2.classList.remove('active'); pre2.classList.add('done'); }
+              if(pre3) { pre3.classList.remove('locked'); pre3.classList.add('active'); }
+
+              // show next-step content (pre-step-3) and hide the form content (pre-step-2)
+              try{
+                const c1 = document.getElementById('pre-step-1-content');
+                const c2 = document.getElementById('pre-step-2-content');
+                const c3 = document.getElementById('pre-step-3-content');
+                if(c2) c2.style.display = 'none';
+                if(c3) c3.style.display = '';
+                // scroll the next-step into view so user sees the Go to Booking action
+                if(c3){ setTimeout(()=>{ try{ c3.scrollIntoView({behavior:'smooth', block:'center'}); }catch(e){} }, 100); }
+              }catch(e){ console.warn('show next step failed', e); }
+
+              // reveal booking section (step3)
+              try{ showBookingSection(); }catch(e){ /* ignore */ }
+              try{ removeBookingInterceptor(); }catch(e){}
+
+              // also update main steps: step2 done, step3 active
+              try{ const s2 = document.getElementById('bs-step-2'); const s3 = document.getElementById('bs-step-3'); if(s2){ s2.classList.remove('active'); s2.classList.add('done'); } if(s3){ s3.classList.remove('locked'); s3.classList.add('active'); } }catch(e){}
+              // auto-scroll to booking section so the user sees the Calendly widget immediately
+              try{ const bookingEl = document.getElementById('booking-section'); if(bookingEl){ setTimeout(()=>{ try{ bookingEl.scrollIntoView({behavior:'smooth', block:'start'}); }catch(e){} }, 300); } }catch(e){}
+            }
+
+            // If googleFormConfig is configured, attempt to POST into Google Form first
+            const statusEl = document.getElementById('pre-consent-status');
+            if(googleFormConfig.formAction && Object.keys(googleFormConfig.fieldMap).length>0){
+              // disable submit to prevent double clicks
+              const submitBtn = preForm.querySelector('button[type="submit"]'); if(submitBtn) submitBtn.disabled = true;
+              if(statusEl) statusEl.textContent = 'Posting to Google Form...';
+              postToGoogleForm(formData, function(){
+                if(submitBtn) submitBtn.disabled = false;
+                if(statusEl) statusEl.textContent = 'Form successfully submitted — you can now book your slot';
+                console.log('[pre-consent-form] posted to Google Form');
+                // show toast popup confirmation (not inside form)
+                try{
+                  const message = 'Form successfully submitted. You can now book your slot.';
+                  showPreConsentToast(message, 'success');
+                }catch(e){}
+                // change submit button into "Submit another response" which resets the form
+                try{
+                  const submitBtn = preForm.querySelector('button[type="submit"]');
+                  if(submitBtn){
+                    submitBtn.textContent = 'Submit another response';
+                    submitBtn.dataset.posted = 'true';
+                    submitBtn.type = 'button';
+                    submitBtn.addEventListener('click', function resetAfterPost(ev){
+                      // reset form fields
+                      preForm.reset();
+                      // restore button
+                      submitBtn.textContent = 'Submit & Continue';
+                      submitBtn.type = 'submit';
+                      delete submitBtn.dataset.posted;
+                      // clear status
+                      const statusEl = document.getElementById('pre-consent-status'); if(statusEl) statusEl.textContent = 'Not submitted';
+                      // remove toast if present
+                      const to = document.getElementById('pre-consent-toast'); if(to){ try{ const bs = bootstrap.Toast.getInstance(to); if(bs) bs.hide(); }catch(e){} }
+                      // remove this listener once used
+                      submitBtn.removeEventListener('click', resetAfterPost);
+                    });
+                  }
+                }catch(e){}
+                onConsentSet();
+              }, function(err){
+                // On error, still set consent locally but log error; user can still proceed
+                console.warn('Google Form post failed or not configured', err);
+                if(submitBtn) submitBtn.disabled = false;
+                if(statusEl) statusEl.textContent = 'Failed to submit to Google — saved locally. You can now book your slot';
+                try{ showPreConsentToast('Submission failed to Google but your response was saved locally. You can still book your slot', 'warning'); }catch(e){}
+                try{
+                  const submitBtn = preForm.querySelector('button[type="submit"]');
+                  if(submitBtn){
+                    submitBtn.textContent = 'Submit another response';
+                    submitBtn.dataset.posted = 'true';
+                    submitBtn.type = 'button';
+                    submitBtn.addEventListener('click', function resetAfterPost(ev){
+                      preForm.reset();
+                      submitBtn.textContent = 'Submit & Continue';
+                      submitBtn.type = 'submit';
+                      delete submitBtn.dataset.posted;
+                      const statusEl = document.getElementById('pre-consent-status'); if(statusEl) statusEl.textContent = 'Not submitted';
+                      const to = document.getElementById('pre-consent-toast'); if(to){ try{ const bs = bootstrap.Toast.getInstance(to); if(bs) bs.hide(); }catch(e){} }
+                      submitBtn.removeEventListener('click', resetAfterPost);
+                    });
+                  }
+                }catch(e){}
+                onConsentSet();
+              });
+            } else {
+              // default behavior (no Google Form integration configured)
+              if(statusEl) statusEl.textContent = 'Form saved locally — you can now book your slot';
+              try{ showPreConsentToast('Your responses were saved locally. You can now book your slot', 'success'); }catch(e){}
+              try{
+                const submitBtn = preForm.querySelector('button[type="submit"]');
+                if(submitBtn){
+                  submitBtn.textContent = 'Submit another response';
+                  submitBtn.dataset.posted = 'true';
+                  submitBtn.type = 'button';
+                  submitBtn.addEventListener('click', function resetAfterPost(ev){
+                    preForm.reset();
+                    submitBtn.textContent = 'Submit & Continue';
+                    submitBtn.type = 'submit';
+                    delete submitBtn.dataset.posted;
+                    const statusEl = document.getElementById('pre-consent-status'); if(statusEl) statusEl.textContent = 'Not submitted';
+                    const to = document.getElementById('pre-consent-toast'); if(to){ try{ const bs = bootstrap.Toast.getInstance(to); if(bs) bs.hide(); }catch(e){} }
+                    submitBtn.removeEventListener('click', resetAfterPost);
+                  });
+                }
+              }catch(e){}
+              onConsentSet();
+            }
+          });
+        }
+
+        // (Removed Open Google Form button behavior — site now posts directly and shows inline confirmation)
+
+        // Utility: show a toast notification for pre-consent actions
+        function showPreConsentToast(message, level){
+          try{
+            const toastEl = document.getElementById('pre-consent-toast');
+            const body = document.getElementById('pre-consent-toast-body');
+            if(!toastEl || !body) return;
+            body.textContent = message;
+                // prepare icon and styles
+                const iconEl = toastEl.querySelector('.toast-icon');
+                const titleEl = document.getElementById('pre-consent-toast-title');
+                const timeEl = document.getElementById('pre-consent-toast-time');
+                const bodyEl = document.getElementById('pre-consent-toast-body');
+                const cta = document.getElementById('pre-consent-toast-cta');
+                if(bodyEl) bodyEl.textContent = message;
+                if(timeEl) timeEl.textContent = 'now';
+                // icon SVGs
+                const successSVG = '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="#16a34a"/><path d="M7.5 12.5l2.5 2.5L16.5 9" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+                const warnSVG = '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="#f59e0b"/><path d="M12 7v6" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 16h.01" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+                if(iconEl){ iconEl.innerHTML = (level==='warning') ? warnSVG : successSVG; }
+                // CTA: scroll to booking
+                if(cta){
+                  cta.onclick = function(){
+                    try{ const booking = document.getElementById('booking-section'); if(booking){ booking.scrollIntoView({behavior:'smooth', block:'start'}); }
+                    }catch(e){}
+                  };
+                }
+                // show toast
+                toastEl.classList.remove('toast-success','toast-warning');
+                toastEl.classList.add(level==='warning' ? 'toast-warning' : 'toast-success');
+                const bs = new bootstrap.Toast(toastEl, { delay: 6000 });
+                bs.show();
+          }catch(e){ console.warn('toast failed', e); }
+        }
+
+        const preGo = document.getElementById('pre-go-to-book');
+        if(preGo){
+          preGo.addEventListener('click', function(){
+            // Prefer checking any stored consent (per-email or legacy); also consider last-known email
+            const lastEmail = localStorage.getItem('consentAcknowledged_v1_last') || '';
+            if(hasAnyConsent() || hasConsentForEmail(lastEmail)){
+              const booking = document.getElementById('booking-section'); if(booking) booking.scrollIntoView({behavior:'smooth', block:'start'});
+              const s3 = document.getElementById('bs-step-3'); if(s3){ s3.classList.add('active'); }
+            } else {
+              const consentModalEl = document.getElementById('consentModal'); if(typeof bootstrap!=='undefined' && consentModalEl){ const m = new bootstrap.Modal(consentModalEl); m.show(); }
+            }
+          });
+        }
+        // initial state: if consent already acknowledged show booking section, otherwise keep it hidden
+        try{
+          if(hasAnyConsent()){
+            try{ showBookingSection(); }catch(e){}
+          } else {
+            // keep booking hidden until form submission
+            try{ const container = document.querySelector('.booking-widget-section'); if(container){ container.style.display = 'none'; } }catch(e){}
+          }
+          // Ensure interceptor is installed early so clicking the Calendly area is captured
+          try{ setupBookingInterceptor(); }catch(e){}
+        }catch(e){ /* ignore */ }
+      }catch(e){ /* ignore */ }
+      
     });
   </script>
+
+  <!-- Toast container for pre-consent notifications (professional design) -->
+  <div aria-live="polite" aria-atomic="true" class="position-fixed top-0 end-0 p-3" style="z-index: 1080;">
+    <div id="pre-consent-toast" class="toast pre-consent-toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-body d-flex align-items-start gap-3">
+        <div class="toast-icon flex-shrink-0">
+          <!-- icon will be injected -->
+        </div>
+        <div class="flex-grow-1">
+          <div class="d-flex align-items-center justify-content-between">
+            <div>
+              <strong id="pre-consent-toast-title">Submission complete</strong>
+              <div class="small text-muted" id="pre-consent-toast-time">now</div>
+            </div>
+            <div>
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="mt-2" id="pre-consent-toast-body">Form successfully submitted. You can now book your slot.</div>
+          <div class="mt-3 d-flex gap-2 align-items-center">
+            <button id="pre-consent-toast-cta" class="btn btn-sm btn-primary">Go to booking</button>
+            <button id="pre-consent-toast-action" class="btn btn-sm btn-outline-secondary" data-bs-dismiss="toast">Dismiss</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Booking Page Styles -->
   <style>
@@ -433,6 +960,41 @@
       margin-left: auto;
       margin-right: auto;
     }
+
+    /* Professional toast styles */
+    .pre-consent-toast.toast {
+      min-width: 320px;
+      max-width: 420px;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.15);
+      border: 1px solid rgba(15,23,42,0.06);
+      background: #fff;
+    }
+    .pre-consent-toast .toast-body { padding: 16px; }
+    .pre-consent-toast .toast-icon { width: 40px; height: 40px; display:flex; align-items:center; justify-content:center; }
+    .pre-consent-toast.toast-success .toast-icon svg { display:block; }
+    .pre-consent-toast.toast-warning .toast-icon svg { display:block; }
+    .pre-consent-toast .btn { font-size: 0.85rem; }
+
+  /* Prebooking flow styles */
+  /* Turn the small horizontal stepper into a vertical step list so the form gets more room */
+  .prebooking-flow .pre-steps{ display:flex; flex-direction:column; gap:12px; min-width:150px; }
+  .prebooking-flow .pre-step{ display:flex; gap:12px; align-items:center; padding:8px 10px; border-radius:10px; border:1px solid rgba(0,0,0,0.04); cursor:pointer; background:transparent; transition:all .18s ease; }
+  .prebooking-flow .pre-step .num{ width:40px; height:40px; border-radius:50%; background:#f3f4f6; display:flex; align-items:center; justify-content:center; color:var(--accent-color); font-weight:800; font-size:15px; }
+  .prebooking-flow .pre-step .label{ font-size:14px; color:var(--default-color); font-weight:600; }
+  .prebooking-flow .pre-step.active{ box-shadow:0 10px 28px rgba(0,0,0,0.06); transform:translateY(-2px); background: linear-gradient(90deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95)); }
+  .prebooking-flow .pre-step.done{ background: linear-gradient(90deg, color-mix(in srgb, var(--accent-color), white 85%) 0%, rgba(0,0,0,0.02) 100%); }
+  .prebooking-flow .pre-step.done .num{ background:var(--accent-color); color:var(--surface-color); box-shadow:0 4px 12px rgba(0,0,0,0.08); }
+  .prebooking-flow .pre-step.locked{ opacity:0.6; }
+  /* Make active step circle stand-out */
+  .prebooking-flow .pre-step.active .num{ background:#fff; color:var(--accent-color); border:2px solid var(--accent-color); }
+  /* Ensure labels wrap nicely and the content area gets more horizontal room */
+  .prebooking-flow .pre-step-content{ flex:1 1 auto; }
+  /* Force prebooking flow layout to be full-width and not overlap header or other elements */
+  .prebooking-flow{ position:static !important; width:100%; max-width:100%; margin:18px auto; z-index:1; }
+  .prebooking-flow .card{ overflow:visible; }
+  /* Ensure the inline consent form doesn't float or position unexpectedly */
+  .prebooking-flow .pre-step-content .pre-content{ position:relative; }
 
     .hero-stats {
       display: flex;
@@ -615,6 +1177,8 @@
       overflow: hidden;
       border: 2px solid rgba(207, 231, 198, 0.4);
     }
+
+    /* Booking overlay/lock styles removed - booking will be hidden/shown by script instead */
 
     /* Info Cards */
     .info-card {

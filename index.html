@@ -369,13 +369,6 @@
     }
   </style>
 
-  <!-- =======================================================
-  * Template Name: Medicio
-  * Template URL: https://bootstrapmade.com/medicio-free-bootstrap-theme/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body class="index-page">
@@ -421,9 +414,8 @@
             <li class="dropdown"><a href="#"><span>Resources</span> <i
                   class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
-                <li><a href="https://www.instagram.com/devenkalathiya/" target="_blank">Instagram Preview</a></li>
                 <li><a href="https://www.linkedin.com/posts/drshark_people-love-togossip-about-your-failures-activity-7379477770428461056-i5JN/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADeycHABLtRyJjl83Wfnd4syVXGnLRNRYB4" target="_blank">Personal Blog</a></li>
-                <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7380451528999919616/" target="_blank">Articles & Research</a></li>
+                <!-- <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7380451528999919616/" target="_blank">Articles & Research</a></li> -->
                 <li><a href="#testimonials">Success Stories</a></li>
               </ul>
             </li>
@@ -453,7 +445,7 @@
 
           <div class="container">
             <h2>Welcome to the Self-Care Lab</h2>
-            <p>At The Self Care Lab, we know self-care isn’t one-size-fits-all. Combining psychology with practical tools, we help you find what genuinely works for you. Whether you’re burnt out or seeking clarity, we guide you toward sustainable, personalized self-care rooted in real insight—not just quick fixes or spa days.
+            <p>At The Self Care Lab, we know self care isn’t one size fits all. Combining psychology with practical tools, we help you find what genuinely works for you. Whether you’re burnt out or seeking clarity, we guide you toward sustainable, personalized self care rooted in real insight not just quick fixes or spa days.
             </p>
             <!-- <a href="#about" class="btn-get-started">Read More</a> -->
             <!-- <a href="#welcome" class="btn-get-started">Read More</a> -->
@@ -464,7 +456,7 @@
         <div class="carousel-item">
           <img src="assets/img/hero-carousel/wp-2.jpg" alt="">
           <div class="container">
-            <h2>Personalized Self-Care, Rooted in Psychology</h2>
+            <h2>Personalized Self Care, Rooted in Psychology</h2>
             <p>Clarity, confidence, and emotional insight through cognitive behavioral therapy and modern counseling.
             </p>
             <!-- <a href="#welcome" class="btn-get-started">Read More</a> -->
@@ -593,9 +585,8 @@
                   </p>
                 </div>
               </div>
-              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="fs-collapse-1">
-                <span class="toggle-text">Show More</span>
-                <i class="fas fa-chevron-down chev" aria-hidden="true"></i>
+              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="fs-collapse-1" title="Want to know more">
+                <i class="bi bi-info-circle info-icon" aria-hidden="true"></i>
               </button>
         </div>
       </div>
@@ -622,9 +613,8 @@
                   </p>
                 </div>
               </div>
-              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="fs-collapse-2">
-                <span class="toggle-text">Show More</span>
-                <i class="fas fa-chevron-down chev" aria-hidden="true"></i>
+              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="fs-collapse-2" title="Want to know more">
+                <i class="bi bi-info-circle info-icon" aria-hidden="true"></i>
               </button>
         </div>
       </div>
@@ -651,9 +641,8 @@
                   </p>
                 </div>
               </div>
-              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="fs-collapse-3">
-                <span class="toggle-text">Show More</span>
-                <i class="fas fa-chevron-down chev" aria-hidden="true"></i>
+              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="fs-collapse-3" title="Want to know more">
+                <i class="bi bi-info-circle info-icon" aria-hidden="true"></i>
               </button>
         </div>
       </div>
@@ -680,9 +669,8 @@
                   </p>
                 </div>
               </div>
-              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="fs-collapse-4">
-                <span class="toggle-text">Show More</span>
-                <i class="fas fa-chevron-down chev" aria-hidden="true"></i>
+              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="fs-collapse-4" title="Want to know more">
+                <i class="bi bi-info-circle info-icon" aria-hidden="true"></i>
               </button>
         </div>
       </div>
@@ -709,15 +697,19 @@
   .service-toggle {
     background: transparent;
     border: 0;
-    color: var(--accent-color);
+    /* inherit the surrounding text color so the info icon matches the title color (e.g., "Guidance") */
+    color: inherit;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
     gap: 8px;
     cursor: pointer;
-    padding: 6px 0;
-    position: relative;
-    z-index: 2; /* ensure above stretched-link */
+    /* position the info icon in the top-right of the service card */
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 6px; /* keep a tappable hit area */
+    z-index: 50; /* ensure above stretched-link and content */
   }
   /* When the card is hovered and background turns accent, switch toggle color to contrast like icon/text */
   .featured-services .service-item:hover .service-toggle {
@@ -728,11 +720,22 @@
     outline-offset: 2px;
     border-radius: 4px;
   }
-  .service-toggle .chev {
-    transition: transform 0.25s ease;
+  /* Info icon: hidden by default, shown on hover/focus */
+  .service-toggle .info-icon {
+    font-size: 18px;
+    /* visible by default and use the inherited text color */
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.12s ease, transform 0.12s ease;
+    color: currentColor; /* ensure it matches the surrounding text color */
+    display: inline-block;
+    line-height: 1;
   }
-  .service-toggle[aria-expanded="true"] .chev {
-    transform: rotate(180deg);
+  /* small hover lift for subtle motion */
+  .featured-services .service-item:hover .service-toggle .info-icon,
+  .service-toggle:focus .info-icon,
+  .service-toggle:hover .info-icon {
+    transform: translateY(-2px);
   }
 </style>
 
@@ -753,13 +756,9 @@
         if (expanded) {
           container.classList.remove('open');
           btn.setAttribute('aria-expanded', 'false');
-          var t = btn.querySelector('.toggle-text');
-          if (t) t.textContent = 'Show More';
         } else {
           container.classList.add('open');
           btn.setAttribute('aria-expanded', 'true');
-          var t2 = btn.querySelector('.toggle-text');
-          if (t2) t2.textContent = 'Show Less';
         }
       });
     });
@@ -956,133 +955,7 @@
       </style>
 
     
-    <!-- /Appointment Section -->
-
-    <section id="testimonials" class="testimonials section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Client Success Stories</h2>
-        <p>Hear from individuals who have transformed their lives through our personalized self-care programs</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper" data-speed="600" data-delay="5000"
-          data-breakpoints="{ &quot;320&quot;: { &quot;slidesPerView&quot;: 1, &quot;spaceBetween&quot;: 40 }, &quot;1200&quot;: { &quot;slidesPerView&quot;: 3, &quot;spaceBetween&quot;: 40 } }">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 1,
-                  "spaceBetween": 40
-                },
-                "1200": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 20
-                }
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" "="">
-            <p>
-              <i class=" bi bi-quote quote-icon-left"></i>
-                <span>I met Dr Naresh through the twitter spaces he hosted on Personal & Behavioral finance. Must say he has something quite unique to offer, instead of giving plain generalised advice, he asked us to self-assess our priorities & then think of fund allocation ratios, build upon investing habits. I feel that the fact that he prompts us to actively think makes it better to cater knowledge seeking relevant to individual's context. And it's always a fun & reflective discussion with him; not just due to financial advice, but the questions he asks curiously, in real life & in podcast. Being an opinionated yet very much open to learn other perspectives is also a quality about him I admire.</span>
-                <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/aastha.jpg" class="testimonial-img" alt="">
-                <h3>Aastha Mehta</h3>
-                <h4>Software Engineer</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>My problem in 2021 was to "be good with money which I was struggling to do " and one fine day I met him on Twitter. I told him my problems he replied "Practice Personal Finance". I replied I don't even know the term you are speaking about and he was too kind to host Twitter spaces every night with 2-3 friends and explained in a well structured way what that term is. 
-Next level mentorship by him which taught us how money works!</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/satyam.jpg" class="testimonial-img" alt="">
-                <h3>Satyam Soni</h3>
-                <h4>Software Developer</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>I had the pleasure of collaborating with Naresh on a personal branding project, and his dedication and insight were truly impressive. As an aspiring psychologist pursuing his Master's in Psychology from IGNOU, Naresh brings a unique blend of academic knowledge and practical understanding to his work. His ability to analyze complex situations and offer thoughtful solutions is commendable. Naresh is not only a committed professional but also a collaborative team player, making him an asset to any project he undertakes. I highly recommend him for any role that requires psychological acumen and a strategic mindset.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/sweta.jpg" class="testimonial-img" alt="">
-                <h3>Sweta Udani</h3>
-                <h4>Educator</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Dr. Naresh is a truly exceptional value alignment coach who possesses a rare combination of great communication skills, and a genuine warmth that fosters a safe and supportive environment. His sessions were transformative for me. He expertly guided me through understanding my unique personality type, revealing both my conscious and subconscious values. This newfound clarity has empowered me to make more aligned decisions in all areas of my life.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/krish.jpg" class="testimonial-img" alt="">
-                <h3>Krish Aryan</h3>
-                <h4>Engineer</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Naresh Thakur is a smart, cooperative, and client-friendly professional with a deep enthusiasm for psychology. He communicates with clarity, often using well-crafted analogies to simplify complex ideas, making him highly relatable in therapeutic settings. Naresh is also experienced with AI tools, seamlessly integrating technology into mental health practices. His adaptability, empathy, and collaborative spirit make him a valuable asset to any psychology-focused team or project.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/muskan.jpg" class="testimonial-img" alt="">
-                <h3>Muskan Yadav</h3>
-                <h4>Counselling Psychologist</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-             <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>I have understood the importance of personal finance and how my daily life behaviour affects my finances. Also learnt some basic rules of money management.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/vikram.jpg" class="testimonial-img" alt="">
-                <h3>Vikram Nayak</h3>
-                <h4>YouTube Creator</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-
-    </section><!-- /Testimonials Section -->
+ 
 
 
     <!-- Services Section -->
@@ -1456,6 +1329,139 @@ Next level mentorship by him which taught us how money works!</span>
 
     </section><!-- /Services Section -->
 
+   <!-- /Appointment Section -->
+
+    <section id="testimonials" class="testimonials section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Client Success Stories</h2>
+        <p>Hear from individuals who have transformed their lives through our personalized self-care programs</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper" data-speed="600" data-delay="5000"
+          data-breakpoints="{ &quot;320&quot;: { &quot;slidesPerView&quot;: 1, &quot;spaceBetween&quot;: 40 }, &quot;1200&quot;: { &quot;slidesPerView&quot;: 3, &quot;spaceBetween&quot;: 40 } }">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 1,
+                  "spaceBetween": 40
+                },
+                "1200": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 20
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item" "="">
+            <p>
+              <i class=" bi bi-quote quote-icon-left"></i>
+                <span>I met Dr Naresh through the twitter spaces he hosted on Personal & Behavioral finance. Must say he has something quite unique to offer, instead of giving plain generalised advice, he asked us to self-assess our priorities & then think of fund allocation ratios, build upon investing habits. I feel that the fact that he prompts us to actively think makes it better to cater knowledge seeking relevant to individual's context. And it's always a fun & reflective discussion with him; not just due to financial advice, but the questions he asks curiously, in real life & in podcast. Being an opinionated yet very much open to learn other perspectives is also a quality about him I admire.</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/aastha.jpg" class="testimonial-img" alt="">
+                <h3>Aastha Mehta</h3>
+                <h4>Software Engineer</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>My problem in 2021 was to "be good with money which I was struggling to do " and one fine day I met him on Twitter. I told him my problems he replied "Practice Personal Finance". I replied I don't even know the term you are speaking about and he was too kind to host Twitter spaces every night with 2-3 friends and explained in a well structured way what that term is. 
+Next level mentorship by him which taught us how money works!</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/satyam.jpg" class="testimonial-img" alt="">
+                <h3>Satyam Soni</h3>
+                <h4>Software Developer</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>I had the pleasure of collaborating with Naresh on a personal branding project, and his dedication and insight were truly impressive. As an aspiring psychologist pursuing his Master's in Psychology from IGNOU, Naresh brings a unique blend of academic knowledge and practical understanding to his work. His ability to analyze complex situations and offer thoughtful solutions is commendable. Naresh is not only a committed professional but also a collaborative team player, making him an asset to any project he undertakes. I highly recommend him for any role that requires psychological acumen and a strategic mindset.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/sweta.jpg" class="testimonial-img" alt="">
+                <h3>Sweta Udani</h3>
+                <h4>Educator</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Dr. Naresh is a truly exceptional value alignment coach who possesses a rare combination of great communication skills, and a genuine warmth that fosters a safe and supportive environment. His sessions were transformative for me. He expertly guided me through understanding my unique personality type, revealing both my conscious and subconscious values. This newfound clarity has empowered me to make more aligned decisions in all areas of my life.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/krish.jpg" class="testimonial-img" alt="">
+                <h3>Krish Aryan</h3>
+                <h4>Engineer</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Naresh Thakur is a smart, cooperative, and client-friendly professional with a deep enthusiasm for psychology. He communicates with clarity, often using well-crafted analogies to simplify complex ideas, making him highly relatable in therapeutic settings. Naresh is also experienced with AI tools, seamlessly integrating technology into mental health practices. His adaptability, empathy, and collaborative spirit make him a valuable asset to any psychology-focused team or project.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/muskan.jpg" class="testimonial-img" alt="">
+                <h3>Muskan Yadav</h3>
+                <h4>Counselling Psychologist</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+             <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>I have understood the importance of personal finance and how my daily life behaviour affects my finances. Also learnt some basic rules of money management.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/vikram.jpg" class="testimonial-img" alt="">
+                <h3>Vikram Nayak</h3>
+                <h4>YouTube Creator</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Section -->
+
+
+
+
+
+
     <!-- Faq Section -->
     <section id="faq" class="faq section light-background">
 
@@ -1583,15 +1589,6 @@ Next level mentorship by him which taught us how money works!</span>
               </div><!-- End Faq item-->
 
               <div class="faq-item">
-                <h3>Do you offer home visits for children’s vocational counselling?</h3>
-                <div class="faq-content">
-                  <p>Occasionally we can arrange home or school visits for vocational assessment depending on the
-                    case and logistics. Please contact us to discuss availability and fees.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
                 <h3>Do you provide corporate wellness programs?</h3>
                 <div class="faq-content">
                   <p>Yes — we offer customized corporate workshops, training and employee wellness programs. Contact
@@ -1618,161 +1615,6 @@ Next level mentorship by him which taught us how money works!</span>
       </div>
 
     </section><!-- /Faq Section -->
-
-
-    <!-- <section id="contact" class="contact section">
-      
-      <div style="background: linear-gradient(135deg, rgba(165, 148, 249, 0.08) 0%, rgba(139, 126, 216, 0.03) 50%, rgba(165, 148, 249, 0.05) 100%); position: relative; overflow: hidden;">
-     
-        <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(165, 148, 249, 0.1) 0%, transparent 70%); border-radius: 50%; opacity: 0.6;"></div>
-        <div style="position: absolute; bottom: -80px; left: -80px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(165, 148, 249, 0.08) 0%, transparent 70%); border-radius: 50%; opacity: 0.4;"></div>
-
-     
-     <div class="container section-title" data-aos="fade-up" style="position: relative; z-index: 2; padding-top: 80px;">
-          <h3 style="background: linear-gradient(135deg, var(--accent-color) 0%, color-mix(in srgb, var(--accent-color), black 20%) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 3.2rem;;">Ready to Transform Your Life?</h3>
-          <p style="font-size: 1.2rem; color: var(--default-color); margin-top: 15px;">Take the first step towards healing, growth, and lasting positive change</p>
-        </div> 
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100" style="position: relative; z-index: 2; padding-bottom: 80px;">
-
-          <div class="row gy-5">
-
-            <div class="col-lg-6 d-flex align-items-center justify-content-center" data-aos="fade-right" data-aos-delay="100">
-              <div class="contact-visual" style="text-align: center; padding: 50px 30px; position: relative;">
-
-              
-                <div style="position: relative; margin-bottom: 40px;">
-                 
-                  <div style="width: 200px; height: 200px; background: linear-gradient(135deg, rgba(165, 148, 249, 0.15) 0%, rgba(139, 126, 216, 0.08) 100%); border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 60px rgba(165, 148, 249, 0.2); position: relative;">
-                    
-       
-                    <div style="position: absolute; top: -10px; left: 20px; background: var(--accent-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(165, 148, 249, 0.4); animation: float 3s ease-in-out infinite;">
-                      <i class="bi bi-heart-fill" style="font-size: 18px;"></i>
-                    </div>
-                    
-                    <div style="position: absolute; bottom: -15px; right: 15px; background: color-mix(in srgb, var(--accent-color), black 10%); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(165, 148, 249, 0.4); animation: float 3s ease-in-out infinite 1s;">
-                      <i class="bi bi-lightbulb-fill" style="font-size: 20px;"></i>
-                    </div>
-
-                    <div style="position: absolute; top: 50px; right: -20px; background: linear-gradient(135deg, var(--accent-color) 0%, color-mix(in srgb, var(--accent-color), black 15%) 100%); color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(165, 148, 249, 0.4); animation: float 3s ease-in-out infinite 2s;">
-                      <i class="bi bi-star-fill" style="font-size: 16px;"></i>
-                    </div>
-
-          
-                    <div style="background: linear-gradient(135deg, var(--accent-color) 0%, color-mix(in srgb, var(--accent-color), black 10%) 100%); color: white; width: 80px; height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(165, 148, 249, 0.3);">
-                      <i class="bi bi-chat-heart-fill" style="font-size: 36px;"></i>
-                    </div>
-                  </div>
-                </div>
-
-                <h4 style="color: var(--heading-color); margin-bottom: 20px; font-size: 28px; font-weight: 700; background: linear-gradient(135deg, var(--accent-color) 0%, color-mix(in srgb, var(--accent-color), black 15%) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-                  Your Journey Starts Here
-                </h4>
-
-                <p style="color: var(--default-color); font-size: 18px; line-height: 1.7; margin-bottom: 30px; font-weight: 500;">
-                  Every great transformation begins with a single conversation. Let's make yours meaningful, supportive, and life-changing.
-                </p>
-
-           
-                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                  <div style="background: linear-gradient(135deg, rgba(165, 148, 249, 0.1) 0%, rgba(139, 126, 216, 0.05) 100%); padding: 15px 20px; border-radius: 15px; border: 2px solid rgba(165, 148, 249, 0.2); display: flex; align-items: center; gap: 10px; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(165, 148, 249, 0.2)'" onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='none'">
-                    <i class="bi bi-telephone-fill" style="color: var(--accent-color); font-size: 18px;"></i>
-                    <span style="color: var(--default-color); font-weight: 600; font-size: 14px;">Call Now</span>
-                  </div>
-                  
-                  <div style="background: linear-gradient(135deg, rgba(165, 148, 249, 0.1) 0%, rgba(139, 126, 216, 0.05) 100%); padding: 15px 20px; border-radius: 15px; border: 2px solid rgba(165, 148, 249, 0.2); display: flex; align-items: center; gap: 10px; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(165, 148, 249, 0.2)'" onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='none'">
-                    <i class="bi bi-envelope-fill" style="color: var(--accent-color); font-size: 18px;"></i>
-                    <span style="color: var(--default-color); font-weight: 600; font-size: 14px;">Email</span>
-                  </div>
-
-                  <div style="background: linear-gradient(135deg, rgba(165, 148, 249, 0.1) 0%, rgba(139, 126, 216, 0.05) 100%); padding: 15px 20px; border-radius: 15px; border: 2px solid rgba(165, 148, 249, 0.2); display: flex; align-items: center; gap: 10px; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(165, 148, 249, 0.2)'" onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='none'">
-                    <i class="bi bi-calendar-check-fill" style="color: var(--accent-color); font-size: 18px;"></i>
-                    <span style="color: var(--default-color); font-weight: 600; font-size: 14px;">Book Online</span>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
-              <div class="contact-options" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.8) 100%); backdrop-filter: blur(10px); padding: 60px 45px; border-radius: 25px; box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15); border: 1px solid rgba(165, 148, 249, 0.1); position: relative; overflow: hidden;">
-
-    
-                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: linear-gradient(90deg, var(--accent-color) 0%, color-mix(in srgb, var(--accent-color), black 15%) 100%);"></div>
-
-              
-                <div style="text-align: center; margin-bottom: 40px;">
-                  <div style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 70px; background: linear-gradient(135deg, var(--accent-color) 0%, color-mix(in srgb, var(--accent-color), black 10%) 100%); border-radius: 50%; margin-bottom: 20px; box-shadow: 0 8px 25px rgba(165, 148, 249, 0.3);">
-                    <i class="bi bi-calendar-heart" style="font-size: 32px; color: white;"></i>
-                  </div>
-                  <h3 style="color: var(--heading-color); margin-bottom: 15px; font-size: 28px; font-weight: 700;">
-                    🌟 Start Your Healing Journey
-                  </h3>
-                  <p style="color: var(--default-color); font-size: 16px; margin: 0; opacity: 0.8;">Choose your preferred way to connect</p>
-                </div>
-
-              
-                <div style="margin-bottom: 35px;">
-                  
-               
-                  <div style="margin-bottom: 25px;">
-                    <a href="booking.html" 
-                      style="display: block; background: linear-gradient(135deg, var(--accent-color) 0%, color-mix(in srgb, var(--accent-color), black 10%) 100%); color: white; padding: 18px 30px; border-radius: 18px; text-decoration: none; font-weight: 700; font-size: 18px; transition: all 0.3s ease; box-shadow: 0 8px 30px rgba(165, 148, 249, 0.4); text-align: center; position: relative; overflow: hidden;"
-                      onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 40px rgba(165, 148, 249, 0.5)'"
-                      onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 8px 30px rgba(165, 148, 249, 0.4)'">
-                      
-                      <div style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); animation: shimmer 2s infinite;"></div>
-                      
-                      <i class="bi bi-calendar-plus me-2" style="font-size: 20px;"></i>
-                      <strong>Book Your Session Now</strong>
-                      <div style="font-size: 14px; margin-top: 5px; opacity: 0.9;">✨ Most Popular Choice</div>
-                    </a>
-                  </div>
-
-                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                    <a href="tel:+917506802501" 
-                      style="display: flex; flex-direction: column; align-items: center; padding: 20px 15px; background: rgba(165, 148, 249, 0.08); border: 2px solid rgba(165, 148, 249, 0.2); border-radius: 15px; text-decoration: none; transition: all 0.3s ease; color: var(--default-color);"
-                      onmouseover="this.style.background='rgba(165, 148, 249, 0.15)'; this.style.transform='translateY(-2px)'"
-                      onmouseout="this.style.background='rgba(165, 148, 249, 0.08)'; this.style.transform='translateY(0px)'">
-                      <i class="bi bi-telephone-fill" style="font-size: 24px; color: var(--accent-color); margin-bottom: 8px;"></i>
-                      <span style="font-weight: 600; font-size: 14px;">Quick Call</span>
-                    </a>
-
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=theselfcarebooster@gmail.com" 
-                      style="display: flex; flex-direction: column; align-items: center; padding: 20px 15px; background: rgba(165, 148, 249, 0.08); border: 2px solid rgba(165, 148, 249, 0.2); border-radius: 15px; text-decoration: none; transition: all 0.3s ease; color: var(--default-color);"
-                      onmouseover="this.style.background='rgba(165, 148, 249, 0.15)'; this.style.transform='translateY(-2px)'"
-                      onmouseout="this.style.background='rgba(165, 148, 249, 0.08)'; this.style.transform='translateY(0px)'">
-                      <i class="bi bi-envelope-fill" style="font-size: 24px; color: var(--accent-color); margin-bottom: 8px;"></i>
-                      <span style="font-weight: 600; font-size: 14px;">Send Email</span>
-                    </a>
-                  </div>
-                </div>
-
-           
-                <div style="background: linear-gradient(135deg, rgba(165, 148, 249, 0.12) 0%, rgba(139, 126, 216, 0.08) 100%); padding: 25px; border-radius: 18px; border: 2px solid rgba(165, 148, 249, 0.15); position: relative;">
-                  <div style="display: flex; align-items: center; gap: 15px;">
-                    <div style="background: var(--accent-color); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                      <i class="bi bi-lightning-fill" style="font-size: 22px;"></i>
-                    </div>
-                    <div>
-                      <p style="color: var(--default-color); margin: 0; font-size: 16px; font-weight: 600;">
-                        <strong>Lightning Fast Response!</strong>
-                      </p>
-                      <p style="color: var(--default-color); margin: 5px 0 0 0; font-size: 14px; opacity: 0.8;">
-                        I'll get back to you within 2-4 hours during business hours
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div> -->
 
    
       <style>

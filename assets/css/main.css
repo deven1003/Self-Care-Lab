@@ -1003,11 +1003,16 @@ section,
 .featured-services .service-item {
   background-color: var(--surface-color);
   box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
-  padding: 50px 30px;
+  /* reduce vertical padding to make boxes more compact and center titles visually */
+  padding: 24px 20px;
   transition: all 0.3s ease-in-out;
   height: 100%;
   position: relative;
   z-index: 1;
+  /* center the visible content vertically while keeping the collapsible hidden when closed */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .featured-services .service-item:before {
@@ -1031,8 +1036,26 @@ section,
 
 .featured-services .service-item h4 {
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
   font-size: 20px;
+}
+
+/* Fix header spacing so title and icon are vertically centered with equal top/bottom space */
+.featured-services .service-item > div:first-child {
+  /* override the inline style margin and align header contents center */
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 0;
+}
+.featured-services .service-item .icon {
+  /* remove extra bottom margin so icon doesn't push content down */
+  margin-bottom: 0;
+}
+.featured-services .service-item h4 {
+  /* cancel any inline top offset and ensure consistent vertical alignment */
+  position: relative !important;
+  top: 0 !important;
 }
 
 .featured-services .service-item h4 a {
