@@ -102,6 +102,20 @@
         <div class="row mb-4" data-aos="fade-up">
           <div class="col-12 text-center">
             <h2 class="booking-intro-title mb-2" style="display:inline-block;padding:0.5rem 0.9rem;background:#eefaf3;border-radius:10px;color:#064;">Schedule Your Session</h2>
+            <div class="mt-2">
+              <div class="small-discovery-card-wrapper text-center">
+                <div class="service-card small-discovery-card d-inline-flex align-items-center">
+                  <div class="small-discovery-text me-3">
+                    <div>Confused or want to know more?</div>
+                    <div>Schedule a free 10-minute discovery call.</div>
+                  </div>
+                  <div class="small-discovery-controls d-flex align-items-center">
+                    <button id="copy-number" class="btn btn-sm btn-outline-secondary">+91 7506802501</button>
+                    <a id="discovery-call-top" href="tel:+917506802501" class="btn btn-sm btn-primary ms-2">Discovery Call</a>
+                  </div>
+                </div>
+              </div>
+            </div>
             <!-- <p class="booking-intro-subtext mb-0">Book your personalized counseling session with real-time availability</p> -->
           </div>
         </div>
@@ -446,6 +460,42 @@
       function getCalendlyUrlFor(service){
         try{ if(!service) return calendlyUrls['individual'] || Object.values(calendlyUrls)[0]; return calendlyUrls[service] || calendlyUrls['individual'] || Object.values(calendlyUrls)[0]; }catch(e){ return Object.values(calendlyUrls)[0]; }
       }
+
+      // Top discovery controls: copy number and direct-call button
+      try{
+        const copyBtn = document.getElementById('copy-number');
+        if(copyBtn){
+          copyBtn.addEventListener('click', function(){
+            const num = '+917506802501';
+            const originalLabel = copyBtn.textContent;
+            const markCopied = () => {
+              try{
+                copyBtn.textContent = 'Copied!';
+                copyBtn.classList.add('btn-success');
+                copyBtn.classList.remove('btn-outline-secondary');
+                setTimeout(()=>{
+                  try{ copyBtn.textContent = originalLabel; copyBtn.classList.remove('btn-success'); copyBtn.classList.add('btn-outline-secondary'); }catch(e){}
+                }, 1800);
+              }catch(e){}
+            };
+
+            // Try Clipboard API first; give feedback when done
+            try{
+              if(navigator.clipboard && navigator.clipboard.writeText){
+                navigator.clipboard.writeText(num).then(markCopied).catch(()=>{ fallbackCopy(num); markCopied(); });
+              } else {
+                fallbackCopy(num); markCopied();
+              }
+            }catch(err){ fallbackCopy(num); markCopied(); }
+
+            function fallbackCopy(t){
+              try{
+                const ta = document.createElement('textarea'); ta.value = t; ta.style.position = 'fixed'; ta.style.left = '-9999px'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+              }catch(e){ /* fail silently */ }
+            }
+          });
+        }
+      }catch(e){}
 
       // Load or reset the Calendly inline widget for a given service
       // Use a fresh iframe with a cache-busting parameter to avoid showing a previous confirmation/invitation state
@@ -1204,6 +1254,30 @@
   @media (max-width: 480px) {
     .prebooking-flow .pre-steps{ gap:8px; flex-wrap:wrap; }
     .prebooking-flow .pre-step{ padding:8px 10px; font-size:13px; }
+  }
+  /* Small discovery card wrapper to match service-card look */
+  .small-discovery-card-wrapper { margin-top: 8px; margin-bottom: 18px; }
+  .small-discovery-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.06);
+    background: #ffffff;
+    box-shadow: 0 8px 22px rgba(15,23,42,0.06);
+    max-width: 920px;
+  }
+  .small-discovery-text {
+    font-weight: 600;
+    color: var(--default-color, #064);
+    font-size: 1rem;
+  }
+  .small-discovery-controls .btn { white-space: nowrap; }
+  @media (max-width: 576px) {
+    .small-discovery-card { flex-direction: column; text-align: center; gap: 10px; }
+    .small-discovery-text { font-size: 0.95rem; }
+    .small-discovery-controls { width: 100%; justify-content: center; gap: 8px; }
   }
 
     .hero-stats {
